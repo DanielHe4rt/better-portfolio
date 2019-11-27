@@ -6,6 +6,11 @@
     An fullstack portfolio made with Laravel 6.x to help the community with this "quick start".  
 </h4> 
 
+## :sparkles: Preview
+> Computer | Mobile 
+> --- | --- |
+> <a href="https://imgur.com/a/XELnLPd" target=”_blank”><img src="https://i.imgur.com/5THAPa7.png" width="540px"/></a>  | <a href="https://imgur.com/a/XELnLPd" target="_blank"><img src="https://i.imgur.com/1CTrqyZ.png" width="280px"/></a> | 
+
 ## :rocket: 5 minutes quick start
 First you need to check if you have all the requirements installed on your machine:
 
