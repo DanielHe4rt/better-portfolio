@@ -1,0 +1,248 @@
+:root {
+    --main-bg-color: #191920;
+
+    --color-purple: #8072ff;
+}
+
+/* - */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.footer {
+    background-color: #26224c;
+}
+
+
+body,
+input,
+button {
+    font: 14px Roboto, sans-serif;
+    outline: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+body {
+    background: #191633 no-repeat center top !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
+    font: 14px Roboto, sans-serif;
+}
+
+#root {
+    background: rgba(64, 57, 127, 0.1);
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* bootstrap config */
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    color: #c2c2c2;
+}
+
+/* profile */
+
+h1#name,
+h4,
+h3,
+h2 {
+    color: var(--color-purple);
+}
+
+.base-purple{
+    color: var(--color-purple);
+}
+
+div.profile {
+    max-width: 1020px !important;
+    margin: 40px 0 20px;
+}
+
+small {
+    color: #646464;
+}
+
+p {
+    color: #c2c2c2;
+}
+
+.social-links {
+    color: #e7e7e7;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.social-links:hover {
+    color: var(--color-purple);
+    transition-duration: 0.5s;
+    transform: scale(1.1);
+}
+
+/* progress */
+.circle {
+    width: 100px;
+    margin: 6px 6px 20px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle strong {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+/* utils */
+
+.shadow {
+    -webkit-box-shadow: 3px 3px 5px 6px black; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 3px 3px 5px 6px black; /* Firefox 3.5 - 3.6 */
+    box-shadow: 3px 3px 5px 6px black; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+/* info */
+
+div.info-card i {
+    color: #e7e7e7;
+    margin-right: 10px;
+    font-size: 40px;
+}
+
+/* timeline */
+
+div.timeline-time {
+    min-width: 250px;
+}
+
+div.timeline-info {
+    margin-top: 10px;
+}
+
+/* form  */
+
+form.form-contact {
+    color: #e7e7e7;
+}
+
+form.form-contact input {
+    background: transparent;
+    border-color: var(--color-purple);
+    color: white;
+    outline-style: none;
+    box-shadow: none;
+}
+
+form.form-contact input:focus {
+    background: transparent;
+    color: white;
+    outline-style: none;
+    box-shadow: none;
+}
+
+form.form-contact textarea {
+    background: transparent;
+    border-color: var(--color-purple);
+    color: white;
+    outline-style: none;
+    box-shadow: none;
+    max-height: 200px;
+}
+
+form.form-contact textarea:focus {
+    background: transparent;
+    color: white;
+    outline-style: none;
+    box-shadow: none;
+}
+
+form.form-contact label {
+    font-weight: bold;
+    color: var(--color-purple);
+}
+
+/* Buttons */
+button {
+    background: transparent;
+    color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+    padding: 3px 20px;
+    font-weight: bold;
+    transition-duration: 1s;
+}
+
+button:hover {
+    background: var(--color-purple);
+    color: white;
+    transition-duration: 1s;
+}
+
+span.badge-custom {
+    font-size: 1.15em;
+    margin: 0.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+span.badge-language {
+    background-color: #8072ff;
+    color: white;
+}
+
+span.badge-framework {
+    background-color: #c772ff;
+    color: white;
+}
+span.badge-other {
+    background-color: 	#ff72f1;
+    color: white;
+}
+
+span.badge-platform {
+    background-color: #72abff;
+    color: white;
+}
+
+
+/* @media */
+
+@media screen and (min-width: 500px) {
+    div.timeline-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div.profile {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div.profile div.info {
+        margin-left: 20px;
+    }
+}
