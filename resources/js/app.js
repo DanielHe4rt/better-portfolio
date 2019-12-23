@@ -6,27 +6,33 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+$(document).ready(function (event) {
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+    $(".form-contact").submit(function (e) {
+        e.preventDefault();
+        window.axios.post('/mailer/contact', $(this).serialize())
+            .then(res => {
+                toastr.success('Mensagem enviada com sucesso! Obrigado <3');
+            })
+            .catch(error => {
+                errorHandler(error.response.data.errors)
+            });
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+    })
+    $(".locale-item").click(function (e) {
+        window.axios.post('/locale', {locale: $(this).attr('data-value')}).then(res => {
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
-    el: '#app',
+        })
+    })
 });
+
+
+let errorHandler = (err) => {
+    for (let i in err) {
+        let currentError = err[i];
+        for (let k in currentError) {
+            toastr.error(currentError[k]);
+        }
+    }
+};

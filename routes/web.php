@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'Admin\\ViewController@viewPortfolio');
+
+Route::get('/', 'Admin\\ViewController@viewPortfolio')->middleware(['web']);
 
 Route::get('/test', function(){
     return view('test');
@@ -19,6 +20,7 @@ Route::get('/test', function(){
 
 Route::post('/auth/login', 'Auth\\AuthController@postLogin')->name('auth-login');
 Route::get('/auth', 'Admin\\ViewController@viewLogin');
+Route::get('/locale/{locale}', 'Auth\\AuthController@getLocale');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', 'Admin\\ViewController@viewDashboard')->name('admin-dashboard');

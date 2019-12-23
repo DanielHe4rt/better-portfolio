@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 
 
 use App\Entities\Helpers\Access;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class LocaleValidator
 {
@@ -17,10 +19,13 @@ class LocaleValidator
      */
     public function handle($request, \Closure $next)
     {
+        $response = $next($request);
         $locale = $request->header('locale');
-        if($locale){
-            app()->setLocale('pt-BR');
+        if (!$locale) {
+            $locale = "pt-BR";
+            $response->headers->set('locale', 'pt-BR');
         }
-        return $next($request);
+        App::setLocale($locale);
+        return $response;
     }
 }
