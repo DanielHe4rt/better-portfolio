@@ -20,7 +20,7 @@ class ViewRepository
             ->groupBy('date')
             ->limit(30)
             //->whereBetween(DB::raw('DATE(created_at)'), $between)
-            ->orderBy('date','asc')
+            ->orderBy('date','desc')
             ->get();
 
         return $data->toArray();
