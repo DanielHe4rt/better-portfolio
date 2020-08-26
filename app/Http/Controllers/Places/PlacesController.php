@@ -42,6 +42,7 @@ class PlacesController extends BaseController
 
     public function putPlace(Request $request, int $placeId)
     {
+
         $data = $this->repository->update($placeId, $request->toArray());
         return $this->success($data);
     }

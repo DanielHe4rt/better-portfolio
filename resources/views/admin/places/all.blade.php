@@ -30,8 +30,7 @@
                                 <button type="submit" data-place-id="{{$row->id}}" class="btn btn-warning editPlaceBtn">
                                     Editar
                                 </button>
-                                <button type="submit" data-place-id="{{$row->id}}" class="btn btn-danger deletePlaceBtn">Remover
-                                </button>
+                                <button type="submit" data-place-id="{{$row->id}}" class="btn btn-danger deletePlaceBtn">Remover</button>
                             </td>
                         </form>
                     </tr>
@@ -43,7 +42,56 @@
     <!--
         Modais abaixo
     -->
+    <div class="modal" id="newPlaceModal">
+        <div class="modal-dialog" role="document">
+            <form id="mainForm" method="POST" action="/places">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deletar Mensagem</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
+                        <div class="form-group">
+                            <label for="company_name">Company Name</label>
+                            <input type="text" class="form-control" id="company_name" name="company_name"
+                                   aria-describedby="emailHelp"
+                                   placeholder="Google">
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label for="joined_at">Joined At</label>
+                                <input type="date" class="form-control" id="joined_at" name="joined_at"
+                                       value="2015-01-01">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="lefted_at">Lefted At</label>
+                                <input type="date" class="form-control" id="lefted_at" name="lefted_at"
+                                       value="2016-01-01">
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" id="current_company" name="current_company">
+                                        Ainda trabalho nessa porra
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Tenho pra caralho</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Deixa quieto</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="modal" id="placeModal">
         <div class="modal-dialog" role="document">
             <form id="mainForm">
@@ -58,27 +106,24 @@
 
                         <div class="form-group">
                             <label for="company_name">Company Name</label>
-                            <input type="text" class="form-control" id="company_name" name="company_name" aria-describedby="emailHelp"
+                            <input type="text" class="form-control" id="company_name" name="company_name"
+                                   aria-describedby="emailHelp"
                                    placeholder="Google">
                         </div>
-                        <div class="form-group">
-                            <label for="role">Role</label>
-                            <input type="text" class="form-control" id="role" name="role" aria-describedby="emailHelp"
-                                   placeholder="Google">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Comments</label>
-                            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                        </div>
+
+                        <ul class="nav nav-tabs" id="langNav"></ul>
+                        <div class="tab-content" id="langContent"></div>
 
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label for="joined_at">Joined At</label>
-                                <input type="date" class="form-control" id="joined_at" name="joined_at" value="2015-01-01">
+                                <input type="date" class="form-control" id="joined_at" name="joined_at"
+                                       value="2015-01-01">
                             </div>
                             <div class="col-sm-6">
                                 <label for="lefted_at">Lefted At</label>
-                                <input type="date" class="form-control" id="lefted_at" name="lefted_at" value="2016-01-01">
+                                <input type="date" class="form-control" id="lefted_at" name="lefted_at"
+                                       value="2016-01-01">
                             </div>
                         </div>
                         <div class="form-group">
@@ -122,6 +167,31 @@
 
 @section('scripts')
     <script>
+        const generateNavItem = (data, active = false) => {
+            return `
+                <li class="nav-item ">
+                    <a class="nav-link ${active ? 'active' : ''}" data-toggle="tab" href="#${data.lang}">${data.lang}</a>
+                </li>
+            `
+        };
+
+        const generateNavData = (data, active = false) => {
+            return `
+                <div class="tab-pane fade ${active ? 'active show' : 'fade'}" id="${data.lang}">
+                    <div class="form-group">
+                        <input type="hidden" name="translate[${data.lang}][id]" value="${data.id}">
+                        <label for="role">Role</label>
+                        <input type="text" class="form-control" id="role" name="translate[${data.lang}][role]" aria-describedby="emailHelp"
+                               placeholder="Google" value="${data.role}">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Comments</label>
+                        <textarea class="form-control" id="description" name="translate[${data.lang}][description]"  rows="3">${data.description}</textarea>
+                    </div>
+                </div>
+            `
+        };
+
         $(document).ready(function () {
 
 
@@ -132,33 +202,48 @@
                 places.attr('method', 'POST');
                 places.attr('action', '/places');
                 $(".filter-option-inner-inner").html('Nothing Selected');
-                $("#placeModal").modal('toggle');
+                $("#newPlaceModal").modal('toggle');
 
                 for (let i = 0; i < opts.length; i++) {
                     opts[i].removeAttribute('selected')
                 }
             });
 
+            $("#current_company").on('change',function(){
+                $(this).prop('checked') ? $("#lefted_at").prop('disabled',true) : $("#lefted_at").prop('disabled',false)
+            });
+
             $(".editPlaceBtn").click(function (e) {
-                e.preventDefault()
+                e.preventDefault();
                 let places = $('#mainForm');
                 let id = $(this).attr('data-place-id');
                 places.attr('method', 'PUT');
-                places.attr('action', '/places/' + id + "?includes[]=skills");
+                places.attr('action', '/places/' + id + "?includes[]=skills&includes[]=translation");
 
                 $.get(places.attr('action'), function (data) {
+
                     for (let i in data) {
                         $("#" + i).val(data[i])
                     }
                     let skill = $("#skills");
                     let opts = skill.find('option');
                     let htmlLabel = '';
+                    let active = true;
+                    $("#langNav").html('');
+                    $("#langContent").html('');
+                    for (let i in data.translation) {
+                        let translate = data.translation[i];
+                        $("#langNav").append(generateNavItem(translate, active));
+                        $("#langContent").append(generateNavData(translate, active));
+                        active = false;
+                    }
+
                     for (let i = 0; i < opts.length; i++) {
                         let skillId = opts[i].getAttribute('value');
                         data.skills.find(skill => {
                             if (skill.id === parseInt(skillId)) {
                                 htmlLabel += skill.name + " ";
-                                if(!opts[i].getAttribute('selected')){
+                                if (!opts[i].getAttribute('selected')) {
                                     return opts[i].setAttribute('selected', '');
                                 }
                             }
@@ -194,12 +279,12 @@
                 })
             })
 
-            $(".deletePlaceBtn").click(function(e){
+            $(".deletePlaceBtn").click(function (e) {
                 e.preventDefault();
-                $("#deleteBtn").attr('data-id',$(this).attr('data-place-id'));
+                $("#deleteBtn").attr('data-id', $(this).attr('data-place-id'));
                 $("#deletePlaceModal").modal('toggle')
             })
-            $("#deleteBtn").click(function(e){
+            $("#deleteBtn").click(function (e) {
                 e.preventDefault();
 
                 let id = $(this).attr('data-id');

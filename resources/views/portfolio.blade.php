@@ -126,7 +126,7 @@
             <section id="whereiwork">
                 <h3 class="text-center title">{{__('portfolio.sections.places.title')}}</h3>
                 <div class="row">
-                    @foreach(\App\Entities\Place\Place::all() as $place)
+                    @foreach($places as $place)
                         <div class="col-sm-12 timeline-info">
                             <div class="timeline-time">
                                 <small>{{__('portfolio.sections.places.data.company')}}:</small>
@@ -146,7 +146,7 @@
                                 </p>
                                 <p>
                                     <strong>{{__('portfolio.sections.places.data.description')}}:</strong>
-                                    {{$place->description}}
+                                    {{$place->translation[0]->description}}
                                 </p>
                             </div>
                         </div>

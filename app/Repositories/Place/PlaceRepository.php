@@ -16,13 +16,14 @@ class PlaceRepository extends BaseRepository
 
     public function create(array $data)
     {
-        if ($data['skills']) {
+        if (isset($data['skills'])) {
             $skills = $data['skills'];
             unset($data['skills']);
         }
         $model = parent::create($data);
-        $skills ? $model->skills()->sync($skills) : null;
-
+        if(isset($data['skills'])){
+            $skills ? $model->skills()->sync($skills) : null;
+        }
         return $model;
     }
 
@@ -36,6 +37,9 @@ class PlaceRepository extends BaseRepository
         $model = $this->model
             ->find($id);
         $model->update($data);
+        foreach($data['translate'] as $translate){
+            $model->translation()->find($translate['id'])->update($translate);
+        }
         $skills ? $model->skills()->sync($skills) : null;
         return $model;
     }

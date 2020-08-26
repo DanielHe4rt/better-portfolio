@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorkPlacesTable extends Migration
+class CreateWorkPlacesI18n extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateWorkPlacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('work_places', function (Blueprint $table) {
+        Schema::create('work_places_i18n', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('company_name');
-            $table->boolean('current_company')->default(false);
-            $table->date('joined_at');
-            $table->date('lefted_at')->nullable();
+            $table->bigInteger('place_id');
+            $table->string('lang');
+            $table->string('role');
+            $table->text('description');
+
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateWorkPlacesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('work_places');
+        Schema::dropIfExists('work_places_i18n');
     }
 }

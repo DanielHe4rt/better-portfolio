@@ -6,11 +6,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Entities\Helpers\Access;
 use App\Entities\Helpers\Profile;
+use App\Entities\Place\Place;
 use App\Enums\Profile\ProfileEnum;
 use App\Http\Controllers\Controller;
 use App\Repositories\View\ViewRepository;
 use App\Traits\ApiResponse;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
@@ -39,7 +41,12 @@ class ViewController extends Controller
         if(env('APP_STATUS') === "MAINENTANCE"){
             return view('mainentance');
         }
-        return view('portfolio', ['profile' => $result]);
+
+        $places = Place::with(['translation' => function($query) {
+            $query->where('lang','=',App::getLocale());
+        }])->get();
+
+        return view('portfolio', ['profile' => $result, 'places' => $places]);
     }
 
     public function viewAllPlaces(){

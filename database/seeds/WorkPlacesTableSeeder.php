@@ -14,26 +14,51 @@ class WorkPlacesTableSeeder extends Seeder
         $data = [
             [
                 'company_name' => 'Google',
-                'role' => 'Software Engineer',
-                'description' => 'very nice',
+                'current_company' => true,
+                'i18n' => [
+                    [
+                        'lang' => 'pt-br',
+                        'role' => 'Engenheiro de Software',
+                        'description' => 'muito bom',
+                    ],
+                    [
+                        'lang' => 'en',
+                        'role' => 'Software Engineer',
+                        'description' => 'very nice',
+                    ]
+                ],
                 'joined_at' => '2010-01-05',
-                'lefted_at' => '2014-05-10',
-                'skills' => [1,2,3]
+                'skills' => [1, 2, 3]
             ],
             [
                 'company_name' => 'Facebook',
-                'role' => 'Data Scientist',
-                'description' => 'very good place to work',
+                'i18n' => [
+                    [
+                        'lang' => 'pt-br',
+                        'role' => 'Desenvolvedor Back-end',
+                        'description' => 'muito bom',
+                    ],
+                    [
+                        'lang' => 'en',
+                        'role' => 'Back-end Developer',
+                        'description' => 'very nice',
+                    ]
+                ],
                 'joined_at' => '2015-02-02',
                 'lefted_at' => '2017-01-14',
-                'skills' => [2,4]
+                'skills' => [2, 4]
             ],
         ];
 
-        foreach($data as $value){
+        foreach ($data as $value) {
             $roles = $value['skills'];
+            $i18n = $value['i18n'];
             unset($value['skills']);
+            unset($value['i18n']);
             $data = App\Entities\Place\Place::create($value);
+            foreach($i18n as $lang){
+                $data->translation()->create($lang);
+            }
             $data->skills()->sync($roles);
         }
     }
