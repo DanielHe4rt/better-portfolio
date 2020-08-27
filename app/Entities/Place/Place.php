@@ -29,10 +29,14 @@ class Place extends Model
     public function getWorkedTimeAttribute()
     {
         $joined = Carbon::parse($this->attributes['joined_at']);
+        $leftedFlag = !empty($this->attributes['lefted_at']) ? true : false;
         $lefted = Carbon::parse($this->attributes['lefted_at']);
         $diff = $lefted->diff($joined);
-        $format = $diff->y ? "%y " .  ($diff->y  === 1 ? "ano" : "anos")  : '';
-        $format .= $diff->m ? " e %m " . ($diff->m  === 1 ? "mes" : "meses") : '';
+        $format = $diff->y ? "%y " . ($diff->y === 1 ? "ano" : "anos") : '';
+        $format .= $diff->y && $diff->m ? " e " : '';
+        $format .= ($diff->m ? " %m " . ($diff->m === 1 ? "mês" : "meses") : '');
+        $format .= !$leftedFlag ? ' até o momento' : '';
+
         return $diff->format($format);
     }
 
