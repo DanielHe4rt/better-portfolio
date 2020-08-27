@@ -67,6 +67,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{route('get-places')}}" class="nav-link ">
+                            <i class="nav-icon"></i>
+                            <p>Empresas</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('get-mail')}}" class="nav-link ">
                             <i class="nav-icon"></i>
                             <p>Mensagens</p>
