@@ -12,16 +12,14 @@
         <div class="card">
             <table class="table table-striped">
                 <thead>
-                <th>
-                <td>Data</td>
-                <td>Assunto</td>
-                <td>Status</td>
-                <td>Ações</td>
-                </th>
+                    <td>Data</td>
+                    <td>Assunto</td>
+                    <td>Status</td>
+                    <td>Ações</td>
                 </thead>
                 <tbody>
                 @foreach($mails as $mail)
-                    <th>
+                    <tr>
                     <td>{{\Carbon\Carbon::parse($mail->created_at)->format('d/m/Y H:i:s')}}</td>
                     <td>{{$mail->subject}}</td>
                     <td>
@@ -33,7 +31,7 @@
                         @endif
                         <button class="btn btn-danger deleteMessage" id="{{$mail->id}}">Apagar</button>
                     </td>
-                    </th>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>
