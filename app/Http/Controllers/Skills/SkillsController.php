@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Skills;
 
 use App\Entities\Skill\Skill;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Skills\UpdateSkillRequest;
 use App\Repositories\Skill\SkillsRepository;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
@@ -31,12 +32,6 @@ class SkillsController extends Controller
 
     public function postSkill(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'string|required',
-            'type_id' => 'required|exists:skill_type,id',
-            'time_id' => 'required|exists:skill_time,id',
-            'comment' => 'string'
-        ]);
         $data = $this->repository->create($request->all());
         return $this->success($data);
     }
@@ -51,22 +46,13 @@ class SkillsController extends Controller
         return $this->success($data);
     }
 
-    public function putSkill(Request $request, int $skillId)
+    public function putSkill(UpdateSkillRequest $request, int $skillId)
     {
-        $request->merge(['id' => $skillId]);
-        $this->validate($request, [
-            'id' => 'exists:skills|required',
-            'name' => 'string',
-            'type_id' => 'exists:skill_type,id',
-            'time_id' => 'exists:skill_time,id',
-            'comment' => 'string'
-        ]);
-
         $data = $this->repository->update($skillId, $request->all());
         return $this->success($data);
     }
 
-    public function deleteSkill(Request $request, int $skillId)
+    public function deleteSkill(int $skillId)
     {
         $this->repository->destroy($skillId);
         return $this->success();

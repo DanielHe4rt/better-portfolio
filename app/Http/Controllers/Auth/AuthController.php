@@ -9,11 +9,11 @@
 namespace App\Http\Controllers\Auth;
 
 
-
 use App\Entities\Auth\User;
 
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\Auth\AuthRequest;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,19 +23,15 @@ class AuthController extends Controller
 {
     use ApiResponse;
 
-    public function postLogin(Request $request)
+    public function postLogin(AuthRequest $request)
     {
-        $this->validate($request, [
-            'email' => 'email|required|exists:users',
-            'password' => 'required'
-        ]);
         $credentials = $request->only(['email', 'password']);
-
         return $this->authenticate($credentials);
     }
 
 
-    public function authenticate(array $credentials){
+    public function authenticate(array $credentials)
+    {
         if (Auth::attempt($credentials)) {
             return $this->success();
         }

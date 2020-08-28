@@ -24,11 +24,12 @@ class ViewController extends Controller
         $this->repository = new ViewRepository();
     }
 
-    public function viewPortfolio(){
+    public function viewPortfolio()
+    {
         $data = Profile::all();
         $result = [];
 
-        foreach($data as $value){
+        foreach ($data as $value) {
             $values = [
                 'value' => $value->value,
                 'enabled' => $value->enabled
@@ -36,13 +37,14 @@ class ViewController extends Controller
             $result[$value->slug] = $values;
         }
 
-        if(env('APP_STATUS') === "MAINENTANCE"){
+        if (env('APP_STATUS') === "MAINENTANCE") {
             return view('mainentance');
         }
         return view('portfolio', ['profile' => $result]);
     }
 
-    public function viewAllPlaces(){
+    public function viewAllPlaces()
+    {
         return view('admin.places.all');
     }
 
@@ -69,7 +71,8 @@ class ViewController extends Controller
         return view('admin.skill.all');
     }
 
-    public function viewAllProfile(){
+    public function viewAllProfile()
+    {
         return view('admin.profile.all');
     }
 }

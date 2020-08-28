@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Places;
 
 use App\Entities\Place\Place;
 use App\Http\BaseController;
+use App\Http\Requests\Places\CreatePlaceRequest;
+use App\Http\Requests\Places\UpdatePlaceRequest;
 use App\Repositories\Place\PlaceRepository;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
@@ -25,7 +27,7 @@ class PlacesController extends BaseController
         return $this->success($this->model->all());
     }
 
-    public function postPlace(Request $request)
+    public function postPlace(CreatePlaceRequest $request)
     {
         $data = $this->repository->create($request->all());
         return $this->success($data);
@@ -40,7 +42,7 @@ class PlacesController extends BaseController
         return $this->success($data);
     }
 
-    public function putPlace(Request $request, int $placeId)
+    public function putPlace(UpdatePlaceRequest $request, int $placeId)
     {
         $data = $this->repository->update($placeId, $request->toArray());
         return $this->success($data);

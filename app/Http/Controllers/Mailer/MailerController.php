@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Mailer;
 
 use App\Entities\Mailer\Mail;
 use App\Http\BaseController;
+use App\Http\Requests\Mailer\CreateMailRequest;
 use App\Mail\ContactMail;
 use App\Repositories\Mailer\MailerRepository;
 use App\Traits\ApiResponse;
@@ -23,15 +24,8 @@ class MailerController extends BaseController
         $this->repository = $repository;
     }
 
-    public function postMail(Request $request)
+    public function postMail(CreateMailRequest $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'name' => 'required',
-            'subject' => 'required',
-            'content' => 'required'
-        ]);
-
         $request->merge([
             'id' => Uuid::uuid4()->toString(),
             'ip' => $request->getClientIp(),
@@ -43,29 +37,32 @@ class MailerController extends BaseController
         return $this->success();
     }
 
-    public function getMail(Request $request, string $mailId){
-        $model =  $this->repository->findById($mailId,['status']);
+    public function getMail(Request $request, string $mailId)
+    {
+        $model = $this->repository->findById($mailId, ['status']);
         return response()->json($model);
     }
 
-    public function putMail(Request $request, string $mailId){
+    public function putMail(Request $request, string $mailId)
+    {
         $request->merge([
             'id' => $mailId
         ]);
-        $this->validate($request,[
+        $this->validate($request, [
             'id' => 'required|exists:mails',
             'status_id' => 'required'
         ]);
         $data = $request->all();
-        $result = $this->repository->update($mailId,$data);
+        $result = $this->repository->update($mailId, $data);
         return $this->success($result);
     }
 
-    public function deleteMail(Request $request, string $mailId){
+    public function deleteMail(Request $request, string $mailId)
+    {
         $request->merge([
             'id' => $mailId
         ]);
-        $this->validate($request,[
+        $this->validate($request, [
             'id' => 'required|exists:mails'
         ]);
 
