@@ -20,7 +20,10 @@ class Place extends Model
         'lefted_at'
     ];
 
-
+    protected $casts = [
+        'joined_at' => 'datetime',
+        'lefted_at' => 'datetime',
+    ];
 
     protected $appends = [
         'worked_time'

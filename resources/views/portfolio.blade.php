@@ -127,7 +127,7 @@
                             <div class="timeline-time">
                                 <small>{{__('portfolio.sections.places.data.company')}}:</small>
                                 <h4>{{$place->company_name}}</h4>
-                                <small>{{__('portfolio.sections.places.data.duration')}}:</small>
+                                <small>{{__('portfolio.sections.places.data.duration')}}: {{$place->joined_at->format('m/Y')}} ~ {{$place->lefted_at->format('m/Y')}}</small>
                                 <h5 class="base-purple">
                                     {!! $place->worked_time !!}
                                 </h5>
