@@ -21,8 +21,8 @@ class Place extends Model
     ];
 
     protected $casts = [
-        'joined_at' => 'datetime',
-        'lefted_at' => 'datetime',
+        'joined_at' => 'datetime:Y-m-d',
+        'lefted_at' => 'datetime:Y-m-d',
     ];
 
     protected $appends = [
