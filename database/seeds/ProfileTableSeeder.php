@@ -19,6 +19,7 @@ class ProfileTableSeeder extends Seeder
             ['name' => 'twitter_url', 'value' => 'https://twitter.com/johndoe', 'description' => ''],
             ['name' => 'github_url', 'value' => 'https://github.com/johndoe', 'description' => ''],
             ['name' => 'linkedin_url', 'value' => 'https://linkedin.com/in/johndoe', 'description' => ''],
+            ['name' => 'instagram_url', 'value' => 'https://instagram/johndoe', 'description' => ''],
             ['name' => 'email', 'value' => 'johndoe@heartdevs.com', 'description' => ''],
             ['name' => 'phone_number', 'value' => '+55 11 99551-9955', 'description' => ''],
         ];

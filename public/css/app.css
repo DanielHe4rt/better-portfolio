@@ -11107,6 +11107,7 @@ a.text-dark:focus {
   -webkit-box-pack: center;
           justify-content: center;
   margin-bottom: 0.5em;
+  height: auto;
 }
 
 .sidebar .avatar img {

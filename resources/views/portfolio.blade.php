@@ -70,6 +70,12 @@
                             <label>{{__('portfolio.sidebar.github')}}</label>
                         </a>
                     @endif
+                    @if($profile['instagram_url']['enabled'])
+                        <a href="{{$profile['instagram_url']['value']}}" class="social-links" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <label>{{__('portfolio.sidebar.instagram')}}</label>
+                        </a>
+                    @endif
                     @if($profile['linkedin_url']['enabled'])
                         <a href="{{$profile['linkedin_url']['value']}}" class="social-links" target="_blank">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
@@ -116,13 +122,15 @@
             <section id="whereiwork">
                 <h3 class="text-center title">{{__('portfolio.sections.places.title')}}</h3>
                 <div class="row">
-                    @foreach(\App\Entities\Place\Place::all() as $place)
+                    @foreach(\App\Entities\Place\Place::orderByDesc('joined_at')->get() as $place)
                         <div class="col-sm-12 timeline-info">
                             <div class="timeline-time">
                                 <small>{{__('portfolio.sections.places.data.company')}}:</small>
                                 <h4>{{$place->company_name}}</h4>
                                 <small>{{__('portfolio.sections.places.data.duration')}}:</small>
-                                <h5 class="base-purple">{!! $place->worked_time !!}</h5>
+                                <h5 class="base-purple">
+                                    {!! $place->worked_time !!}
+                                </h5>
                             </div>
                             <div class="separator"></div>
                             <div class="timeline-description">

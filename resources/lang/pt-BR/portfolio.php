@@ -8,6 +8,7 @@ return [
         'twitter' => 'Siga-me no Twitter',
         'github' => 'Siga-me no Github',
         'linkedin' => 'Siga-me no Linkedin',
+        'instagram' => 'Siga-me no Instagram',
     ],
     'sections' => [
         'about' => [

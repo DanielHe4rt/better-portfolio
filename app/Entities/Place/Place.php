@@ -32,10 +32,10 @@ class Place extends Model
         $leftedFlag = !empty($this->attributes['lefted_at']) ? true : false;
         $lefted = Carbon::parse($this->attributes['lefted_at']);
         $diff = $lefted->diff($joined);
-        $format = $diff->y ? "%y " . ($diff->y === 1 ? "ano" : "anos") : '';
+        $format = $diff->y ? "%y " . ($diff->y === 1 ? "year" : "years") : '';
         $format .= $diff->y && $diff->m ? " e " : '';
-        $format .= ($diff->m ? " %m " . ($diff->m === 1 ? "mês" : "meses") : '');
-        $format .= !$leftedFlag ? ' até o momento' : '';
+        $format .= ($diff->m ? " %m " . ($diff->m === 1 ? "month" : "months") : '');
+        $format .= !$leftedFlag ? ' until now' : '';
 
         return $diff->format($format);
     }
