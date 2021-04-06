@@ -19,7 +19,7 @@ class MailerRepository extends BaseRepository
     public function create(array $data)
     {
         $mail =  parent::create($data);
-        Mailer::to(env('APP_EMAIL'))->send(new ContactMail($mail->toArray()));
+//        Mailer::to(env('APP_EMAIL'))->send(new ContactMail($mail->toArray()));
 
         return $mail;
     }
