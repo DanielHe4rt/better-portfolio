@@ -26,16 +26,17 @@ class AuthController extends Controller
     public function postLogin(AuthRequest $request)
     {
         $credentials = $request->only(['email', 'password']);
-        return $this->authenticate($credentials);
+        if (Auth::attempt($credentials)) {
+            return $this->success();
+        } else {
+            return $this->unauthorized(['errors' => ['data' => ['Unauthorized.']]]);
+        }
     }
 
 
-    public function authenticate(array $credentials)
+    public function authenticate(array $credentials): bool
     {
-        if (Auth::attempt($credentials)) {
-            return $this->success();
-        }
-        return $this->unauthorized();
+        return Auth::attempt($credentials);
     }
 
     public function postLogout(Request $request)

@@ -18,13 +18,13 @@
         <div class="col-md-6 col-12">
             <h3 class="text-center">Cantinho mágico do danielcoração</h3>
             <form id="form-login">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Entrar</h1>
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Entrar</h1>
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required=""
                        autofocus="">
                 <hr>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required="">
+                <input type="password" id="inputPassword" class="form-control" autocomplete="off" placeholder="Password" name="password" required="">
                 <hr>
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar
+                <button class="btn btn-success btn-block" type="submit"> Entrar
                 </button>
             </form>
         </div>
