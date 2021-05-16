@@ -107,7 +107,7 @@
 </div>
 <footer class="footer">
     <p class="text-center mb-0 p-3">
-        {!! __('portfolio.sections.footer.description') !!}
+        {!! __('portfolio.sections.footer.description', ['footerLink' => 'https://github.com/danielhe4rt/better-portfolio']) !!}
     </p>
 </footer>
 

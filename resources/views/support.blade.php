@@ -118,7 +118,7 @@
                                 Entre no meu apoia.se <a href="https://apoia.se/danielheart">clicando aqui</a> e crie uma conta caso vocẽ nao tenha</p>
                             <div class="block"></div>
 
-                            <h4 class="title">1. Clique no apoiar e selecione um valor</h4>
+                            <h4 class="title">2. Clique no apoiar e selecione um valor</h4>
                             <img class="img-thumbnail"src="https://i.imgur.com/bRXBz4z.png" alt="">
                             <p>
                                 Selecione um valor que seja confortável para você e é isso!
