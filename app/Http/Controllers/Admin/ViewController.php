@@ -43,6 +43,25 @@ class ViewController extends Controller
         return view('portfolio', ['profile' => $result]);
     }
 
+    public function viewSupport()
+    {
+        $data = Profile::all();
+        $profile = [];
+
+        foreach ($data as $value) {
+            $values = [
+                'value' => $value->value,
+                'enabled' => $value->enabled
+            ];
+            $profile[$value->slug] = $values;
+        }
+
+        if (env('APP_STATUS') === "MAINENTANCE") {
+            return view('mainentance');
+        }
+        return view('support', compact('profile'));
+    }
+
     public function viewAllPlaces()
     {
         return view('admin.places.all');

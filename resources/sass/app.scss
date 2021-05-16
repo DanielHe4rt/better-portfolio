@@ -14,6 +14,7 @@
         justify-content: center;
         margin-bottom: 0.5em;
         height: auto;
+
         img {
             width: 100%;
             max-width: 200px;
@@ -119,3 +120,71 @@ h3.title {
         margin-top: 2em;
     }
 }
+
+
+// =====================================================
+// Pagina de Suporte
+// =====================================================
+
+.why-support {
+    text-align: center;
+
+    p {
+        padding-top: 30px;
+    }
+}
+
+.my-projects {
+    text-align: center;
+
+    .projects {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; // X
+        align-content: space-around; // Y
+        .project {
+            text-decoration: none;
+            margin: 20px 0 10px 0;
+
+            img {
+                border-bottom: 1px solid #915de8;
+                max-width: 295px;
+            }
+
+            .project-title {
+                color: #915de8;
+                font-size: 23px;
+            }
+
+            p {
+                padding: .6rem;
+                text-align: justify;
+            }
+
+            //color: #915de8;
+            width: 300px;
+            border: 3px solid #915de8;
+
+            flex-direction: row;
+        }
+    }
+}
+
+
+.how-support {
+    text-align: center;
+
+    .method {
+        border: 3px solid #915de8;
+
+        h2 {
+            border: 3px solid #915de8;
+        }
+
+        .method-body {
+            background-color: white;
+        }
+    }
+}
+

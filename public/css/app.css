@@ -11114,6 +11114,7 @@ a.text-dark:focus {
   width: 100%;
   max-width: 200px;
   border-radius: 10px;
+  max-height: 200px;
 }
 
 @media (max-width: 767px) {
@@ -11227,5 +11228,66 @@ h3.title {
     padding-left: 0;
     margin-top: 2em;
   }
+}
+
+.why-support {
+  text-align: center;
+}
+
+.why-support p {
+  padding-top: 30px;
+}
+
+.my-projects {
+  text-align: center;
+}
+
+.my-projects .projects {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.my-projects .projects .project {
+  text-decoration: none;
+  margin: 20px 0 10px 0;
+  width: 300px;
+  border: 3px solid #915de8;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.my-projects .projects .project img {
+  border-bottom: 1px solid #915de8;
+  max-width: 295px;
+}
+
+.my-projects .projects .project .project-title {
+  color: #915de8;
+  font-size: 23px;
+}
+
+.my-projects .projects .project p {
+  padding: 0.6rem;
+  text-align: justify;
+}
+
+.how-support {
+  text-align: center;
+}
+
+.how-support .method {
+  border: 3px solid #915de8;
+}
+
+.how-support .method h2 {
+  border: 3px solid #915de8;
+}
+
+.how-support .method .method-body {
+  background-color: white;
 }
 
