@@ -11195,6 +11195,10 @@ h3.title {
   margin: 45px 0 22.5px 0;
 }
 
+h4.title {
+  margin: 30px 0 15px 0;
+}
+
 .separator {
   height: 95%;
   margin-top: 4px;
@@ -11284,10 +11288,19 @@ h3.title {
 }
 
 .how-support .method h2 {
-  border: 3px solid #915de8;
+  border: 1px solid #915de8;
 }
 
 .how-support .method .method-body {
-  background-color: white;
+  background-color: #131229;
+}
+
+.block {
+  height: 1px;
+  border: 1px solid #915de8;
+}
+
+.btn {
+  border-radius: 0;
 }
 

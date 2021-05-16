@@ -54,7 +54,7 @@
             <div class="accordion" id="accordionExample">
                 <div class="method">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-block text-left btn-no-radius" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Amazon Prime (Twitch Prime)
                         </button>
                     </h2>
@@ -63,51 +63,64 @@
 
                             <p>Esse modelo de apoio custa ZERO para você que tenha Amazon Prime e não utiliza-o na Twitch.</p>
 
-                            <h4>1. Crie uma conta na Twitch</h4>
-                            <img src="https://i.imgur.com/PH8a85z.png" alt="">
+                            <h4 class="title">1. Crie uma conta na Twitch</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/PH8a85z.png" alt="">
                             <p>Crie uma conta na Twitch TV para que você possa seguir meu canal.</p>
-
-                            <h4>2. Procure o botão de vinculação do Amazon Prime</h4>
-                            <img src="https://i.imgur.com/boW0JXs.png" alt="">
+                            <div class="block"></div>
+                            <h4 class="title">2. Procure o botão de vinculação do Amazon Prime</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/boW0JXs.png" alt="">
                             <p>
                                 Clique na coroa ao lado do seu usuário, localizado ao lado direito da barra de navegação
                                 e clique para Iniciar o Prime Gaming.
                             </p>
-
-                            <h4>3. Vincule seu Amazon Prime</h4>
-                            <img src="https://i.imgur.com/c8u2MQy.png" alt="">
+                            <div class="block"></div>
+                            <h4 class="title">3. Vincule seu Amazon Prime</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/c8u2MQy.png" alt="">
                             <p>
                                 Clique no botão "Try Prime" ou algo semelhante nessa tela caso seu sistema seja em português.<br>
                                 Siga todos os passos para que o Prime Gaming seja vinculado à sua conta da Twitch.
                             </p>
-
-                            <h4>4. Entre no meu canal da Twitch e clique no Inscrever</h4>
-                            <img src="https://i.imgur.com/yL4kl2B.png" alt="">
+                            <div class="block"></div>
+                            <h4 class="title">4. Entre no meu canal da Twitch e clique no Inscrever</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/yL4kl2B.png" alt="">
                             <p>ou</p>
-                            <img src="https://i.imgur.com/1modPgt.png" alt="">
+                            <img class="img-thumbnail"src="https://i.imgur.com/1modPgt.png" alt="">
                             <p>
                                 Ao entrar no meu canal, se eu estiver offline, clique na aba Chat ou procure pelo botão
                                 Subscribe ou Inscrever-se.
                             </p>
-                            <h4>5. Inscreva-se com Prime</h4>
-                            <img src="https://i.imgur.com/fBtOqWZ.png" alt="">
+                            <div class="block"></div>
+                            <h4 class="title">5. Inscreva-se com Prime</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/fBtOqWZ.png" alt="">
                             <p>
                                 Procure pelo botão de inscrição com o Prime e clique no botão. Após finalizar você terá me ajudado IMENSAMENTE no meu projeto!
                             </p>
 
                             <div class="alert alert-warning"> Lembre-se que essa inscrição é valida apenas por 1 mês, então por favor volte todo mês pra me dar essa força <3</div>
+                            <br>
                         </div>
                     </div>
                 </div>
                 <div class="method">
                     <h2>
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Collapsible Group Item #2
+                            Apoio na plataforma "Apoia-se"
                         </button>
                     </h2>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="method-body">
-                            Some placeholder content for the second accordion panel. This panel is hidden by default.
+                            <h4 class="title">1. Entre na plataforma do Apoia.se</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/bRXBz4z.png" alt="">
+                            <p>
+                                Entre no meu apoia.se <a href="https://apoia.se/danielheart">clicando aqui</a> e crie uma conta caso vocẽ nao tenha</p>
+                            <div class="block"></div>
+
+                            <h4 class="title">1. Clique no apoiar e selecione um valor</h4>
+                            <img class="img-thumbnail"src="https://i.imgur.com/bRXBz4z.png" alt="">
+                            <p>
+                                Selecione um valor que seja confortável para você e é isso!
+                            </p>
+                            <div class="block"></div>
                         </div>
                     </div>
                 </div>
