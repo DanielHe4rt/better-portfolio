@@ -11304,3 +11304,25 @@ h4.title {
   border-radius: 0;
 }
 
+.links {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin: 40px 0 20px 0;
+}
+
+.links a {
+  border: 3px solid #915de8;
+  border-radius: 0.25rem;
+  margin: 5px;
+  padding: 5px;
+  color: #c2c2c2;
+}
+
+.links a:hover {
+  background-color: #32304e;
+  color: #c2c2c2;
+  text-decoration: none;
+}
+

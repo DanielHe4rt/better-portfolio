@@ -199,3 +199,24 @@ h4.title {
 .btn {
     border-radius: 0;
 }
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px 0;
+
+    a {
+        border: 3px solid #915de8;
+        border-radius: .25rem;
+        margin: 5px;
+        padding: 5px;
+        color: #c2c2c2;
+
+        &:hover {
+            background-color: #32304e;
+            color: #c2c2c2;
+            text-decoration: none;
+        }
+    }
+
+}
