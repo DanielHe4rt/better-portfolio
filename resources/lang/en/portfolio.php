@@ -38,7 +38,7 @@ return [
             ]
         ],
         'footer' => [
-            'description' => 'You can find this whole project on <a href="#">Github</a>. ' . env('APP_NAME') . " © " . date('Y')
+            'description' => 'You can find this whole project on <a href=":footerLink" target="_blank">Github</a>. ' . env('APP_NAME') . " © " . date('Y')
         ]
     ]
 ];

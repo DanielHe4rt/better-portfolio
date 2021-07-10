@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Admin\\ViewController@viewPortfolio');
+Route::get('/support', 'Admin\\ViewController@viewSupport');
 
 Route::get('/test', function(){
     return view('test');
