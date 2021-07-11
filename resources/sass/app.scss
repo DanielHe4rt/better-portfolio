@@ -220,3 +220,43 @@ h4.title {
     }
 
 }
+
+.newsletter {
+
+    background-color: #494762;
+    justify-content:center;
+    input {
+        width: 300px;
+        background: transparent;
+        border-color: var(--color-purple);
+        color: white;
+        outline-style: none;
+        box-shadow: none;
+    }
+
+    input:focus {
+        background: transparent;
+        color: white;
+        outline-style: none;
+        box-shadow: none;
+    }
+     input:focus {
+        background: transparent;
+        color: white;
+        outline-style: none;
+        box-shadow: none;
+    }
+
+     label {
+        font-weight: bold;
+        color: var(--color-purple);
+    }
+
+    .message {
+        padding-top: 6px;
+        color: white;
+
+    }
+}
+
+

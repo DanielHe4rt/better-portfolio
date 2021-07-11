@@ -11326,3 +11326,42 @@ h4.title {
   text-decoration: none;
 }
 
+.newsletter {
+  background-color: #494762;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.newsletter input {
+  width: 300px;
+  background: transparent;
+  border-color: var(--color-purple);
+  color: white;
+  outline-style: none;
+  box-shadow: none;
+}
+
+.newsletter input:focus {
+  background: transparent;
+  color: white;
+  outline-style: none;
+  box-shadow: none;
+}
+
+.newsletter input:focus {
+  background: transparent;
+  color: white;
+  outline-style: none;
+  box-shadow: none;
+}
+
+.newsletter label {
+  font-weight: bold;
+  color: var(--color-purple);
+}
+
+.newsletter .message {
+  padding-top: 6px;
+  color: white;
+}
+

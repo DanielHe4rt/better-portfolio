@@ -1,5 +1,6 @@
 <?php
 
+use App\Entities\Auth\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -11,6 +12,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Entities\Auth\User::class)->create();
+        User::factory()->create();
     }
 }
