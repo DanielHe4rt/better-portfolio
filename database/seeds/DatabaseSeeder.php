@@ -11,11 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
         $this->call(MailStatusTableSeeder::class);
-        if (env('APP_ENV') === 'local') {
-            $this->call(AccessTableSeeder::class);
-        }
         $this->call(SkillTimeSeeder::class);
         $this->call(SkillTypeSeeder::class);
         $this->call(SkillsSeeder::class);

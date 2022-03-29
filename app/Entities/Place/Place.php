@@ -7,6 +7,7 @@ namespace App\Entities\Place;
 use App\Entities\Skill\Skill;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Place extends Model
 {
@@ -29,7 +30,7 @@ class Place extends Model
         'worked_time'
     ];
 
-    public function getWorkedTimeAttribute()
+    public function getWorkedTimeAttribute(): string
     {
         $joined = Carbon::parse($this->attributes['joined_at']);
         $leftedFlag = !empty($this->attributes['lefted_at']) ? true : false;
@@ -43,7 +44,7 @@ class Place extends Model
         return $diff->format($format);
     }
 
-    public function skills()
+    public function skills(): BelongsToMany
     {
         return $this->belongsToMany(
             Skill::class,

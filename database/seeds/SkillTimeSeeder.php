@@ -1,25 +1,22 @@
 <?php
 
+use App\Entities\Skill\Time;
+use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
 class SkillTimeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    use DisableForeignKeys;
+
     public function run()
     {
-        $data = [
-            '1m-6m',
-            '6m-1y',
-            '1y-2y',
-            '2y-3y',
-            '3y+'
-        ];
-        foreach($data as $value){
-            \App\Entities\Skill\Time::create(['name' => $value]);
+        $this->disableForeignKeys();
+        Time::query()->truncate();
+
+        foreach (config('portfolio.working-time') as $value) {
+            Time::create(['name' => $value]);
         }
+
+        $this->enableForeignKeys();
     }
 }

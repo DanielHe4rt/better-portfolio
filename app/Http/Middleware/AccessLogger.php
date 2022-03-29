@@ -16,17 +16,18 @@ class AccessLogger
      */
     public function handle($request, Closure $next)
     {
-        $ipAddress = $request->getClientIp();
-        $userAgent = $request->header('User-Agent');
-        $model = Access::where('ip', '=', $ipAddress)
-            ->whereDate('created_at', date('Y-m-d'))
-            ->first();
-        if (!$model) {
-            Access::create([
-                'user_agent' => $userAgent,
-                'ip' => $ipAddress
-            ]);
-        }
+        // TODO: refactoring
+//        $ipAddress = $request->getClientIp();
+//        $userAgent = $request->header('User-Agent');
+//        $model = Access::where('ip', '=', $ipAddress)
+//            ->whereDate('created_at', date('Y-m-d'))
+//            ->first();
+//        if (!$model) {
+//            Access::create([
+//                'user_agent' => $userAgent,
+//                'ip' => $ipAddress
+//            ]);
+//        }
         return $next($request);
     }
 }

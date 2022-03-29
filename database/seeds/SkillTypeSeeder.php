@@ -1,21 +1,22 @@
 <?php
 
+use App\Entities\Skill\Type;
+use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
 class SkillTypeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    use DisableForeignKeys;
+
     public function run()
     {
-        $data = [
-            'language','framework','platform','others'
-        ];
-        foreach($data as $value){
-            \App\Entities\Skill\Type::create(['name' => $value]);
+        $this->disableForeignKeys();
+
+        Type::query()->truncate();
+        foreach (config('portfolio.tags') as $value) {
+            Type::create(['name' => $value]);
         }
+
+        $this->enableForeignKeys();
     }
 }

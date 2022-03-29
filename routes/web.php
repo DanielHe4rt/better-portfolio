@@ -12,8 +12,9 @@
 */
 
 use App\Http\Controllers\Mailer\NewsletterController;
+use App\Http\LandingController;
 
-Route::get('/', 'Admin\\ViewController@viewPortfolio');
+Route::get('/', [LandingController::class, 'viewPortfolio'])->name('landing');
 Route::get('/support', 'Admin\\ViewController@viewSupport');
 
 Route::get('/test', function(){

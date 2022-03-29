@@ -1,40 +1,21 @@
 <?php
 
+use App\Entities\Skill\Skill;
+use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
 class SkillsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    use DisableForeignKeys;
+
     public function run()
     {
-        $skills = [
-            [
-                'name' => 'PHP',
-                'type_id' => 1,
-                'time_id' => 5,
-            ],
-            [
-                'name' => 'Laravel',
-                'type_id' => 2,
-                'time_id' => 3,
-            ],
-            [
-                'name' => 'MySQL',
-                'type_id' => 1,
-                'time_id' => 4,
-            ],
-            [
-                'name' => 'JavaScript',
-                'type_id' => 1,
-                'time_id' => 1,
-            ]
-        ];
-        foreach($skills as $skill){
-            \App\Entities\Skill\Skill::create($skill);
+        $this->disableForeignKeys();
+        Skill::query()->truncate();
+        foreach (config('portfolio.skills') as $skill) {
+            Skill::query()->create($skill);
         }
+
+        $this->enableForeignKeys();
     }
 }
