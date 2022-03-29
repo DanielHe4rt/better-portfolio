@@ -11,7 +11,10 @@
 |
 */
 
+use App\Http\Controllers\Mailer\NewsletterController;
+
 Route::get('/', 'Admin\\ViewController@viewPortfolio');
+Route::get('/support', 'Admin\\ViewController@viewSupport');
 
 Route::get('/test', function(){
     return view('test');
@@ -56,3 +59,5 @@ Route::prefix('places')->group(function () {
     Route::put('/{placeId}','Places\\PlacesController@putPlace');
     Route::delete('/{placeId}','Places\\PlacesController@deletePlace');
 });
+
+Route::post('newsletter', [NewsletterController::class, 'postNewsletter'])->name('post-newsletter');
