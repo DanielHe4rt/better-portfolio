@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories\Place;
+namespace App\Repositories\Admin\Place;
 
 
 use App\Entities\Place\Place;

@@ -1,18 +1,17 @@
 <?php
 
 
-namespace App\Http\Controllers\Mailer;
+namespace App\Http\Controllers\Admin\Mailer;
 
 
 use App\Entities\Mailer\Mail;
 use App\Http\BaseController;
-use App\Http\Requests\Mailer\CreateMailRequest;
-use App\Mail\ContactMail;
-use App\Repositories\Mailer\MailerRepository;
+use App\Repositories\Admin\Mailer\MailerRepository;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
-use \Illuminate\Support\Facades\Mail as Mailer;
-use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Facades\Mail as Mailer;
+use Illuminate\View\View;
+use function response;
 
 class MailerController extends BaseController
 {
@@ -24,17 +23,10 @@ class MailerController extends BaseController
         $this->repository = $repository;
     }
 
-    public function postMail(CreateMailRequest $request)
+    public function viewMails(): View
     {
-        $request->merge([
-            'id' => Uuid::uuid4()->toString(),
-            'ip' => $request->getClientIp(),
-            'user_agent' => $request->header('User-Agent')
-        ]);
-
-        $data = $request->all();
-        $this->repository->create($data);
-        return $this->success();
+        $mails = Mail::orderBy('created_at', 'DESC')->get();
+        return view('admin.mailer.all', ['mails' => $mails]);
     }
 
     public function getMail(Request $request, string $mailId)

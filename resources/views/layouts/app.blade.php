@@ -34,7 +34,7 @@
 <body>
 <div id="root" class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-dark mb-3">
-        <a class="navbar-brand" href="#">{{env('APP_NAME')}}</a>
+        <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav  ml-auto">
                 <li class="nav-item active">

@@ -11,7 +11,7 @@ class Profile extends Model
     protected $table = "profile";
 
     protected $fillable = [
-        'name','value','description','enabled'
+        'name', 'value', 'description', 'enabled'
     ];
 
     protected $appends = [
@@ -22,11 +22,13 @@ class Profile extends Model
         'enabled' => 'boolean'
     ];
 
-    public function getNameAttribute(){
+    public function getNameAttribute()
+    {
         return __('profile.' . $this->attributes['name']);
     }
 
-    public function getSlugAttribute(){
+    public function getSlugAttribute()
+    {
         return $this->attributes['name'];
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories\Skill;
+namespace App\Repositories\Admin\Skill;
 
 
 use App\Entities\Skill\Skill;

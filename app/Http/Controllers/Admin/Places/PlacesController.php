@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\Http\Controllers\Places;
+namespace App\Http\Controllers\Admin\Places;
 
 
 use App\Entities\Place\Place;
 use App\Http\BaseController;
 use App\Http\Requests\Places\CreatePlaceRequest;
 use App\Http\Requests\Places\UpdatePlaceRequest;
-use App\Repositories\Place\PlaceRepository;
+use App\Repositories\Admin\Place\PlaceRepository;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 

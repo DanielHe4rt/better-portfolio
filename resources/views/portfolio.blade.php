@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
     <div class="col-xs-12 col-md-9" style="border-left: 1px solid rgba(194,194,194,0.1);">
         @if($profile['about']['enabled'])
             <section id="intro">
@@ -94,21 +92,6 @@
                 </div>
             </form>
         </section>
-            <hr>
-        <section class="newsletter">
-            <div class="message">
-                <h6>Se inscreva para saber mais sobre meus projetos!</h6>
-            </div>
-            <form class="text-center" method="POST" action="{{ route('post-newsletter') }}">
-                @csrf
-                <div class="form-group">
-                    <input type="text" class="form-control" id="inputSubject" name="subject"
-                           placeholder="Quero cotar um freelance | Só queria dar um oi">
-                </div>
-                <button class="" style="border-radius: .25rem"
-                        type="submit">{{__('portfolio.sections.contact.data.send')}}</button>
-            </form>
-        </section>
+
     </div>
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/38b214aa0794bb5eff3b206dd/5f70b4bf9f6641d1be8fbb992.js");</script>
 @endsection

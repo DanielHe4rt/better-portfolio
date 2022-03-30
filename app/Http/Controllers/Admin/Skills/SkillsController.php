@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Http\Controllers\Skills;
+namespace App\Http\Controllers\Admin\Skills;
 
 
 use App\Entities\Skill\Skill;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Skills\UpdateSkillRequest;
-use App\Repositories\Skill\SkillsRepository;
+use App\Repositories\Admin\Skill\SkillsRepository;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 

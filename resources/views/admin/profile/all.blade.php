@@ -15,30 +15,38 @@
                 <tr>
                     <td>Nome</td>
                     <td>Conteúdo</td>
-                    <td>Ações</td>
+                    <td>Ativo</td>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Entities\Helpers\Profile::all() as $row)
+                @foreach($fields as $row)
                     <tr>
                         <form data-profile-id="{{$row->id}}">
                             <td>{{$row->name}}</td>
                             <td>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="value" value="{{$row->value}}"/>
-                                </div>
+                                @if(strtolower($row->name) == 'about')
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="value" id="exampleTextarea" rows="3">
+                                            {{ $row->value }}
+                                        </textarea>
+                                    </div>
+                                @else
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="value" value="{{$row->value}}"/>
+                                    </div>
+                                @endif
                             </td>
                             <td>
                                 <div class="form-check">
                                     <label class="form-check-label">
                                         <input class="form-check-input" name="enabled"
                                                type="checkbox" {{$row->enabled ? "checked=" : ""}} value="{{$row->enabled ? 1 : 0}}" >
-                                        Option two is disabled
+
                                     </label>
                                 </div>
                             </td>
                             <td>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Atualizar</button>
                             </td>
                         </form>
                     </tr>

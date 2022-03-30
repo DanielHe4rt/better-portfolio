@@ -6,16 +6,16 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class AuthRequest extends FormRequest
 {
-    public function rules()
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
     {
         return [
             'email' => 'email|required|exists:users',
             'password' => 'required'
         ];
-    }
-
-    public function authorize()
-    {
-        return true;
     }
 }
