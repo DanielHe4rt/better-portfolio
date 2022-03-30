@@ -1,14 +1,13 @@
 <?php
 
+use App\Entities\Mailer\Status;
+use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
 class MailStatusTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    use DisableForeignKeys;
+
     public function run()
     {
         $status = [
@@ -25,8 +24,9 @@ class MailStatusTableSeeder extends Seeder
                 'type' => 'success',
             ]
         ];
+        Status::query()->truncate();
         foreach($status as $value){
-            \App\Entities\Mailer\Status::create($value);
+            Status::create($value);
         }
     }
 }
