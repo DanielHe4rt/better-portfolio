@@ -92,36 +92,69 @@ h4.title {
     margin: 30px 0 15px 0;
 }
 
-.separator {
-    @media (max-width: 767px) {
-        height: 0;
-    }
+.timeline-info {
+    .timeline-time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    height: 95%;
-    margin-top: 4px;
-    width: 3px;
-    margin-right: 5px;
-    background: rgba(255, 255, 255, 0.3);
-}
+        border-right: 1px solid rgb(86, 85, 112, .5);
+        border-bottom: 1px solid rgb(86, 85, 112, .5);
+        small {
+            color: #B6B6B6;
+        }
 
-.timeline-time {
-    h4 {
-        margin-bottom: 1em;
+        h4 {
+            margin-bottom: 1em;
+            color: #8C7AFB;
 
-        @media (max-width: 767px) {
-            margin-bottom: 0;
+            @media (max-width: 767px) {
+                margin-bottom: 0;
+            }
         }
     }
+
+    .timeline-description {
+
+        padding: 10px;
+        border-bottom: 1px solid rgb(86, 85, 112, .5);
+
+    }
 }
 
-.timeline-description {
-    padding-left: 10px;
-}
+
 
 @media (max-width: 767px) {
-    .timeline-description {
-        padding-left: 0;
-        margin-top: 2em;
+    .timeline-info {
+        margin-bottom: 1rem;
+
+
+
+        .timeline-time {
+            padding: 10px;
+            border-left: 1px solid rgb(86, 85, 112, .5);
+            border-top: 1px solid rgb(86, 85, 112, .5);
+            border-bottom: 0;
+            small {
+                color: #B6B6B6;
+                margin-bottom: .5rem;
+                margin-top: .5rem;
+            }
+
+            h4 {
+
+                color: #8C7AFB;
+                margin-bottom: .5rem;
+
+            }
+        }
+
+        .timeline-description {
+            border-left: 1px solid rgb(86, 85, 112, .5);
+            border-right: 1px solid rgb(86, 85, 112, .5);
+        }
+
+
     }
 }
 
@@ -220,43 +253,4 @@ h4.title {
     }
 
 }
-
-.newsletter {
-
-    background-color: #494762;
-    justify-content:center;
-    input {
-        width: 300px;
-        background: transparent;
-        border-color: var(--color-purple);
-        color: white;
-        outline-style: none;
-        box-shadow: none;
-    }
-
-    input:focus {
-        background: transparent;
-        color: white;
-        outline-style: none;
-        box-shadow: none;
-    }
-     input:focus {
-        background: transparent;
-        color: white;
-        outline-style: none;
-        box-shadow: none;
-    }
-
-     label {
-        font-weight: bold;
-        color: var(--color-purple);
-    }
-
-    .message {
-        padding-top: 6px;
-        color: white;
-
-    }
-}
-
 

@@ -36,9 +36,9 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('mailer')->group(function () {
         Route::get('/', [MailerController::class, 'viewMails'])->name('get-mail');
-        Route::get('/{mailId}', 'Mailer\\MailerController@getMail');
-        Route::put('/{mailId}', 'Mailer\\MailerController@putMail');
-        Route::delete('/{mailId}', 'Mailer\\MailerController@deleteMail');
+        Route::get('/{mailId}', [MailerController::class, 'getMail']);
+        Route::put('/{mailId}', [MailerController::class, 'putMail']);
+        Route::delete('/{mailId}', [MailerController::class, 'deleteMail']);
     });
 
     Route::prefix('skills')->group(function () {

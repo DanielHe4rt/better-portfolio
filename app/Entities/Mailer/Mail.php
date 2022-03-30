@@ -4,14 +4,18 @@
 namespace App\Entities\Mailer;
 
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Mail extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
+
     public $incrementing = false;
-    protected $table = "mails";
+
+    protected $table = 'mails';
 
     protected $fillable = [
         'id',
@@ -24,7 +28,8 @@ class Mail extends Model
         'user_agent'
     ];
 
-    public function status(){
+    public function status(): BelongsTo
+    {
         return $this->belongsTo(Status::class);
     }
 

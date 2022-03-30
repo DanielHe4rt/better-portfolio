@@ -40,7 +40,8 @@
                         </div>
                         <div class="separator"></div>
                         <div class="timeline-description">
-                            <p>{{__('portfolio.sections.places.data.rated_skills')}}:
+                            <p>
+                                <strong>{{__('portfolio.sections.places.data.rated_skills')}}:</strong>
                                 @foreach($place->skills as $skill)
                                     <span class="badge badge-pill badge-{{$skill->type->slug}} "
                                           data-toggle="tooltip" data-placement="bottom" title=""

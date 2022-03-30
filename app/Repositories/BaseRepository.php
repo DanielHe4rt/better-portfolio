@@ -28,7 +28,7 @@ class BaseRepository
 
     public function destroy($id)
     {
-        return $this->model->find($id)->delete();
+        return $this->model->findOrFail($id)->delete();
     }
 
 }
