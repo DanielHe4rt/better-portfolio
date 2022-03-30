@@ -1,21 +1,22 @@
 <?php
 
 use App\Entities\Helpers\Profile;
+use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
 class ProfileTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    use DisableForeignKeys;
+
     public function run()
     {
+        $this->disableForeignKeys();
 
-
+        Profile::query()->truncate();
         foreach(config('portfolio.base-information') as $info){
             Profile::create($info);
         }
+
+        $this->enableForeignKeys();
     }
 }
