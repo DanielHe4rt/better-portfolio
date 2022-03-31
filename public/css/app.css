@@ -11232,6 +11232,32 @@ h4.title {
 }
 
 @media (max-width: 767px) {
+  #articles {
+    margin-top: 32px;
+  }
+
+  #articles .article {
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid rgba(86, 85, 112, 0.5);
+  }
+
+  #articles .article .article-image {
+    display: none;
+  }
+
+  #articles .article .article-title {
+    color: #B6B6B6;
+  }
+
+  #articles .article .article-info {
+    color: #B6B6B6;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
   .timeline-info {
     margin-bottom: 1rem;
   }

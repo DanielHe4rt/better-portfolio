@@ -26,7 +26,7 @@ class LandingController extends Controller
     public function viewPortfolio()
     {
         $result = $this->landingRepository->build();
-        return view('portfolio', ['profile' => $result]);
+        return view('portfolio', $result);
     }
 
     public function postMail(CreateMailRequest $request): JsonResponse

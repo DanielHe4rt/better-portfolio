@@ -24,9 +24,11 @@ class MailStatusTableSeeder extends Seeder
                 'type' => 'success',
             ]
         ];
+        $this->disableForeignKeys();
         Status::query()->truncate();
         foreach($status as $value){
             Status::create($value);
         }
+        $this->enableForeignKeys();
     }
 }

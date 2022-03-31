@@ -125,6 +125,30 @@ h4.title {
 
 
 @media (max-width: 767px) {
+    #articles {
+        margin-top: 32px;
+        .article {
+
+            margin-bottom: 16px;
+            padding: 12px;
+            border: 1px solid rgba(86, 85, 112, 0.5);
+            .article-image {
+                display: none;
+            }
+
+            .article-title {
+                color: #B6B6B6;
+            }
+
+            .article-info {
+                color: #B6B6B6;
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+
+    }
+
     .timeline-info {
         margin-bottom: 1rem;
 
