@@ -14,6 +14,11 @@ return [
             'description' => ''
         ],
         [
+            'name' => 'meta_description',
+            'value' => 'Brazilian Developer Evangelist with a few years of Software Development, Community Management and Content Creation.',
+            'description' => ''
+        ],
+        [
             'name' => 'base_description',
             'value' => 'Developer Advocate',
             'description' => ''
@@ -50,7 +55,7 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
         ],
         [
             'name' => 'instagram_url',
-            'value' => 'https://instagram/danielhe4rt',
+            'value' => 'https://instagram.com/danielhe4rt',
             'description' => ''
         ],
         [

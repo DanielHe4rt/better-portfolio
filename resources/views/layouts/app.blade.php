@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/toastr.css') }}"/>
-    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." name="description">
+    <meta content="{{ $profile['meta_description']['value'] }}" name="description">
     <!-- Android search bar color -->
     <meta content="#34495E" name="theme-color"><!-- Mobile icon -->
     <meta content="DanielHeart - Portfólio" property="og:title">
-    <meta content="{{$profile['picture_url']['value']}}" property="og:image">
+    <meta content="{{ $profile['picture_url']['value'] }}" property="og:image">
     <meta content="website" property="og:type">
-    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." property="og:description">
+    <meta content="{{ $profile['meta_description']['value'] }}" property="og:description">
     <meta content="DanielHeart - Portfólio" property="og:site_name"><!-- Twitter Card data -->
     <meta content="summary_large_image" name="twitter:card">
     <meta content="@danielhe4rt" name="twitter:site">
     <meta content="DanielHeart - Portfólio" name="twitter:title">
-    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." name="twitter:description">
+    <meta content="{{ $profile['meta_description']['value'] }}" name="twitter:description">
     <meta content="@danielhe4rt" name="twitter:creator">
     <meta content="DanielHeart - Portfólio" itemprop="name">
     <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." itemprop="description">
