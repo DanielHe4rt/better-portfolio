@@ -7,28 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>{{$profile['fullname']['value']}}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <link rel="stylesheet" href="{{asset('css/index.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/circle.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/circle.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/toastr.css')}}"/>
-    <meta content="💻 Desenvolvedor Back, 20 anos e que curte programar em PHP" name="description">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/toastr.css') }}"/>
+    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." name="description">
     <!-- Android search bar color -->
     <meta content="#34495E" name="theme-color"><!-- Mobile icon -->
     <meta content="DanielHeart - Portfólio" property="og:title">
     <meta content="{{$profile['picture_url']['value']}}" property="og:image">
     <meta content="website" property="og:type">
-    <meta content="💻💻Desenvolvedor Back-end que curte criar Megazords com PHP" property="og:description">
+    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." property="og:description">
     <meta content="DanielHeart - Portfólio" property="og:site_name"><!-- Twitter Card data -->
     <meta content="summary_large_image" name="twitter:card">
     <meta content="@danielhe4rt" name="twitter:site">
     <meta content="DanielHeart - Portfólio" name="twitter:title">
-    <meta content="💻Desenvolvedor Back-end que curte criar Megazords com PHP" name="twitter:description">
+    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." name="twitter:description">
     <meta content="@danielhe4rt" name="twitter:creator">
     <meta content="DanielHeart - Portfólio" itemprop="name">
-    <meta content="💻💻Desenvolvedor Back-end que curte criar Megazords com PH" itemprop="description">
+    <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." itemprop="description">
 </head>
 
 <body>
@@ -64,25 +63,25 @@
                     <div class="social-networks">
                         @if($profile['twitter_url']['enabled'])
                             <a href="{{$profile['twitter_url']['value']}}" class="social-links" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                <i class="fa-brands fa-twitter" aria-hidden="true"></i>
                                 <label>{{__('portfolio.sidebar.twitter')}}</label>
                             </a>
                         @endif
                         @if($profile['github_url']['enabled'])
                             <a href="{{$profile['github_url']['value']}}" class="social-links" target="_blank">
-                                <i class="fa fa-github" aria-hidden="true"></i>
+                                <i class="fa-brands fa-github" aria-hidden="true"></i>
                                 <label>{{__('portfolio.sidebar.github')}}</label>
                             </a>
                         @endif
                         @if($profile['instagram_url']['enabled'])
                             <a href="{{$profile['instagram_url']['value']}}" class="social-links" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                                 <label>{{__('portfolio.sidebar.instagram')}}</label>
                             </a>
                         @endif
                         @if($profile['linkedin_url']['enabled'])
                             <a href="{{$profile['linkedin_url']['value']}}" class="social-links" target="_blank">
-                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                                 <label>{{__('portfolio.sidebar.linkedin')}}</label>
                             </a>
                         @endif

@@ -55,7 +55,8 @@ class RefillDevToPostsCommand extends Command
                 'comments' => $post['comments_count'],
                 'reading_time_minutes' => $post['reading_time_minutes'],
                 'published_at' => Carbon::parse($post['published_at']),
-                'is_english' => !Str::contains($post['tags'],'braziliandevs')
+                'is_english' => !Str::contains($post['tags'],'braziliandevs'),
+                'url' => $post['url']
             ];
         }
         return $result;

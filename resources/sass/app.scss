@@ -121,29 +121,77 @@ h4.title {
 
     }
 }
+#articles {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    .article-list {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+        flex-wrap: wrap;
+        .article {
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+            margin-bottom: 10px;
 
 
+            .article-body {
+                display: flex;
+                align-content: center;
+
+                flex-direction: column;
+                //border: 1px solid #9387ff;
+                .article-image {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    width: 100%;
+                }
+                .article-title {
+                    color: #9387ff !important;
+                }
+                .article-info {
+                    font-size: 12px;
+                    color: #B6B6B6;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+    }
+
+}
 
 @media (max-width: 767px) {
     #articles {
+        display: flex;
+        flex-direction: column;
         margin-top: 32px;
-        .article {
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            .article {
+                width: 100%;
+                margin-bottom: 16px;
+                padding: 12px;
+                border: 1px solid rgba(86, 85, 112, 0.5);
+                .article-image {
+                    //display: none;
+                }
 
-            margin-bottom: 16px;
-            padding: 12px;
-            border: 1px solid rgba(86, 85, 112, 0.5);
-            .article-image {
-                display: none;
-            }
+                .article-title {
+                    padding-top: 5px;
+                    color: #9387ff !important;
+                }
 
-            .article-title {
-                color: #B6B6B6;
-            }
-
-            .article-info {
-                color: #B6B6B6;
-                display: flex;
-                justify-content: space-evenly;
+                .article-info {
+                    color: #B6B6B6;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
             }
         }
 

@@ -11231,26 +11231,97 @@ h4.title {
   border-bottom: 1px solid rgba(86, 85, 112, 0.5);
 }
 
+#articles {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 32px;
+}
+
+#articles .article-list {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#articles .article-list .article {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+#articles .article-list .article .article-body {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+#articles .article-list .article .article-body .article-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
+
+#articles .article-list .article .article-body .article-title {
+  color: #9387ff !important;
+}
+
+#articles .article-list .article .article-body .article-info {
+  font-size: 12px;
+  color: #B6B6B6;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 @media (max-width: 767px) {
   #articles {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
     margin-top: 32px;
   }
 
-  #articles .article {
+  #articles .article-list {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+
+  #articles .article-list .article {
+    width: 100%;
     margin-bottom: 16px;
     padding: 12px;
     border: 1px solid rgba(86, 85, 112, 0.5);
   }
 
-  #articles .article .article-image {
-    display: none;
+  #articles .article-list .article .article-title {
+    padding-top: 5px;
+    color: #9387ff !important;
   }
 
-  #articles .article .article-title {
-    color: #B6B6B6;
-  }
-
-  #articles .article .article-info {
+  #articles .article-list .article .article-info {
     color: #B6B6B6;
     display: -webkit-box;
     display: flex;

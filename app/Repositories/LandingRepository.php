@@ -12,7 +12,7 @@ class LandingRepository
     {
         return [
             'profile' => app(LandingProfileTransformer::class)->handle(Profile::all()->toArray()),
-            'articles' => Article::query()->orderByDesc('created_at')->get()
+            'articles' => Article::query()->orderByDesc('created_at')->limit(3)->get()
         ];
     }
 }

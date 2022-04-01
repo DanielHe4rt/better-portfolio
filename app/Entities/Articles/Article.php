@@ -13,6 +13,7 @@ class Article extends Model
         'platform_id',
         'cover_image',
         'title',
+        'url',
         'reactions',
         'comments',
         'reading_time_minutes',

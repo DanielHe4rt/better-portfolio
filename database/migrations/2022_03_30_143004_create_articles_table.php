@@ -15,6 +15,7 @@ class CreateArticlesTable extends Migration
             $table->string('platform_id');
             $table->string('cover_image');
             $table->string('title');
+            $table->string('url');
             $table->integer('reactions');
             $table->integer('comments');
             $table->integer('reading_time_minutes');

@@ -23,23 +23,32 @@
             </div>
         </section>
 
+        @if(count($articles))
         <section id="articles">
             <h4 class="text-center">Last Articles</h4>
+            <div class="article-list">
+                @foreach($articles as $article)
 
-            @foreach($articles as $article)
-                <article class="article">
-                    <img class="article-image" src="{{ $article->cover_image }}" alt="">
-                    <h6 class="text-center article-title">{{ $article->title }}</h6>
-                    <div class="article-info">
-                        <img width="16" src="{{ $article->is_english ? 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/en.svg' : 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg' }}" alt="">
-                        <i><i class="fa fa-heart"></i> {{ $article->reactions }}</i>
-                        <i><i class="fa fa-comment"></i> {{ $article->comments }}</i>
-                        <i><i class="fas fa-clock"></i> {{ $article->reading_time_minutes }}</i>
-                        <i><i class="fa fa-clock"></i> {{ $article->published_at->format('Y-m-d') }}</i>
-                    </div>
-                </article>
-            @endforeach
+                    <article class="article">
+                        <a class="article-body" href="{{ $article->url }}" target="_blank">
+                            <img class="article-image" src="{{ $article->cover_image }}" alt="">
+                            <h6 class="text-center article-title">{{ $article->title }}</h6>
+                            <div class="article-info">
+                                <img width="16"
+                                     src="{{ $article->is_english ? 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/en.svg' : 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg' }}"
+                                     alt="">
+                                <i><i class="fa fa-heart"></i> {{ $article->reactions }}</i>
+                                <i><i class="fa fa-comment"></i> {{ $article->comments }}</i>
+                                <i><i class="fas fa-clock"></i> {{ $article->reading_time_minutes }}</i>
+                                <i><i class="fa fa-calendar"></i> {{ $article->published_at->format('Y-m-d') }}</i>
+                            </div>
+                        </a>
+                    </article>
+
+                @endforeach
+            </div>
         </section>
+        @endif
 
         <section id="whereiwork">
             <h3 class="text-center title">{{__('portfolio.sections.places.title')}}</h3>
@@ -106,8 +115,8 @@
                     <textarea class="form-control" id="inputMessage" name="content" rows="3"></textarea>
                 </div>
                 <div class="text-right">
-                <button class="text-right" style="border-radius: .25rem"
-                        type="submit">{{__('portfolio.sections.contact.data.send')}}</button>
+                    <button class="text-right" style="border-radius: .25rem"
+                            type="submit">{{__('portfolio.sections.contact.data.send')}}</button>
                 </div>
             </form>
         </section>
