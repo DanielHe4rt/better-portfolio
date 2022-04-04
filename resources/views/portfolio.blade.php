@@ -35,7 +35,7 @@
                             <h6 class="text-center article-title">{{ $article->title }}</h6>
                             <div class="article-info">
                                 <img width="16"
-                                     src="{{ $article->is_english ? 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/en.svg' : 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg' }}"
+                                     src="{{ $article->is_english ? 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg' : 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg' }}"
                                      alt="">
                                 <i><i class="fa fa-heart"></i> {{ $article->reactions }}</i>
                                 <i><i class="fa fa-comment"></i> {{ $article->comments }}</i>
