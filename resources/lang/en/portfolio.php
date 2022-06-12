@@ -8,6 +8,7 @@ return [
         'twitter' => 'Follow me on Twitter',
         'github' => 'Follow me on Github',
         'linkedin' => 'Follow me on Linkedin',
+        'youtube' => 'Follow me on YouTube',
         'instagram' => 'Follow me on Instagram',
     ],
     'sections' => [

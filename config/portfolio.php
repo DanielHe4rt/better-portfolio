@@ -49,6 +49,11 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'description' => ''
         ],
         [
+            'name' => 'youtube_url',
+            'value' => 'https://youtube.com/danielhe4rt',
+            'description' => ''
+        ],
+        [
             'name' => 'linkedin_url',
             'value' => 'https://linkedin.com/in/danielheart',
             'description' => ''

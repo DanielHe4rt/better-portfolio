@@ -73,6 +73,12 @@
                                 <label>{{__('portfolio.sidebar.github')}}</label>
                             </a>
                         @endif
+                        @if($profile['youtube_url']['enabled'])
+                            <a href="{{$profile['youtube_url']['value']}}" class="social-links" target="_blank">
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                                <label>{{__('portfolio.sidebar.youtube')}}</label>
+                            </a>
+                        @endif
                         @if($profile['instagram_url']['enabled'])
                             <a href="{{$profile['instagram_url']['value']}}" class="social-links" target="_blank">
                                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
