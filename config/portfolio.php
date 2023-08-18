@@ -232,6 +232,16 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'role' => 'Senior Back-end Developer',
             'description' => 'At Liuv I was leading a team to refactor the entire legacy application from Laravel 5.3 into a microservices ecosystem with Laravel, Lumen and React as the main architect.',
             'joined_at' => '2022-01-01',
+            'lefted_at' => '2022-04-01',
+            'skills' => [
+                2, 4
+            ]
+        ],
+        [
+            'company_name' => 'ScyllaDB',
+            'role' => 'Developer Advocate',
+            'description' => 'Producing content about ScyllaDB, CQL and Database Paradigms focusing to bring brand and tech awareness from the beginners perspective.',
+            'joined_at' => '2023-02-01',
             'lefted_at' => null,
             'skills' => [
                 2, 4
