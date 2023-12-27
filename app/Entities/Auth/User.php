@@ -2,13 +2,14 @@
 
 namespace App\Entities\Auth;
 
-use Hash;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use Notifiable, HasFactory;
 
@@ -35,4 +36,8 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($attribute);
     }
 
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
 }
