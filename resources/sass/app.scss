@@ -5,7 +5,7 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 .sidebar {
     .avatar {
@@ -152,6 +152,7 @@ h4.title {
                 }
                 .article-title {
                     color: #9387ff !important;
+                    min-height: 50px;
                 }
                 .article-info {
                     font-size: 12px;

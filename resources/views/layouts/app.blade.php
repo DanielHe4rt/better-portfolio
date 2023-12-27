@@ -28,6 +28,7 @@
     <meta content="@danielhe4rt" name="twitter:creator">
     <meta content="DanielHeart - Portfólio" itemprop="name">
     <meta content="Developer Evangelist with a few years of LiveCoding sessions streamed." itemprop="description">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>

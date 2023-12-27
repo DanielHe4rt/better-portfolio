@@ -8,9 +8,9 @@
 
 ## :sparkles: Preview
 
-> Computer | Mobile
-> --- | --- |
-> <a href="https://imgur.com/a/XELnLPd" target=”_blank”><img src="https://i.imgur.com/5THAPa7.png" width="540px"/></a>  | <a href="https://imgur.com/a/XELnLPd" target="_blank"><img src="https://i.imgur.com/1CTrqyZ.png" width="280px"/></a> | 
+| Computer                                                                                                             | Mobile                                                                                                               |
+|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| <a href="https://imgur.com/a/XELnLPd" target=”_blank”><img src="https://i.imgur.com/5THAPa7.png" width="540px"/></a> | <a href="https://imgur.com/a/XELnLPd" target="_blank"><img src="https://i.imgur.com/1CTrqyZ.png" width="280px"/></a> | 
 
 ## :rocket: 5 minutes quick start
 
@@ -18,9 +18,9 @@ First you need to check if you have all the requirements installed on your machi
 
 | Dependencies | Version |
 |--------------|---------|
-| PHP          | \>= 7.4 | 
+| PHP          | \>= 8.2 | 
 | Composer     | latest  | 
-| Laravel      | 8.x     | 
+| Laravel      | 10.x    | 
 
 :bulb: Install all packages of the `package.json` on your project. This will download everything you need.
 
