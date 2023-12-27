@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Entities\Auth;
+namespace App\Models\Auth;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements FilamentUser
 {
-    use Notifiable, HasFactory;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -30,11 +29,6 @@ class User extends Authenticatable implements FilamentUser
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function setPasswordAttribute(string $attribute): void
-    {
-        $this->attributes['password'] = Hash::make($attribute);
-    }
 
     public function canAccessPanel(Panel $panel): bool
     {

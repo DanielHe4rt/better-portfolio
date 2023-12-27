@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateMailsTable extends Migration
 {
@@ -23,7 +23,7 @@ class CreateMailsTable extends Migration
             $table->integer('status_id')->default(1);
 
             $table->ipAddress('ip');
-            $table->string('user_agent',150);
+            $table->string('user_agent', 150);
 
             $table->timestamps();
             $table->softDeletes();

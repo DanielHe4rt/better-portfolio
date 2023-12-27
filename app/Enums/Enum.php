@@ -4,8 +4,7 @@ namespace App\Enums;
 
 abstract class Enum
 {
-
-    final public function __construct($value = "")
+    final public function __construct($value = '')
     {
         $reflectionClass = new \ReflectionClass($this);
         if (! in_array($value, $reflectionClass->getConstants())) {
@@ -22,6 +21,7 @@ abstract class Enum
     final public static function all()
     {
         $oClass = new \ReflectionClass(get_called_class());
+
         return $oClass->getConstants();
     }
 }

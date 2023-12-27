@@ -1,8 +1,9 @@
 <?php
+
 return [
     'header' => [
         'home' => 'Portfolio',
-        'locale' => 'Language'
+        'locale' => 'Language',
     ],
     'sidebar' => [
         'twitter' => 'Follow me on Twitter',
@@ -13,11 +14,11 @@ return [
     ],
     'sections' => [
         'about' => [
-            'title' => 'About me'
+            'title' => 'About me',
         ],
         'skills' => [
             'title' => 'Skills',
-            'description' => 'Right below there are the tools and the respective time i\'ve worked over time in my career:'
+            'description' => 'Right below there are the tools and the respective time i\'ve worked over time in my career:',
         ],
         'places' => [
             'title' => 'Experiences',
@@ -25,8 +26,8 @@ return [
                 'company' => 'Company',
                 'duration' => 'Duration',
                 'rated_skills' => 'Most rated skills',
-                'description' => 'Description'
-            ]
+                'description' => 'Description',
+            ],
         ],
         'contact' => [
             'title' => 'Contact',
@@ -35,11 +36,11 @@ return [
                 'email' => 'E-mail',
                 'subject' => 'Subject',
                 'message' => 'Message',
-                'send' => 'Send <3'
-            ]
+                'send' => 'Send <3',
+            ],
         ],
         'footer' => [
-            'description' => 'You can find this whole project on <a href=":footerLink" target="_blank">Github</a>. ' . env('APP_NAME') . " © " . date('Y')
-        ]
-    ]
+            'description' => 'You can find this whole project on <a href=":footerLink" target="_blank">Github</a>. '.env('APP_NAME').' © '.date('Y'),
+        ],
+    ],
 ];

@@ -2,8 +2,8 @@
 
 namespace Database\Factories\Entities\Mailer;
 
+use App\Models\Mailer\Mail;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Entities\Mailer\Mail;
 
 class MailFactory extends Factory
 {
@@ -19,7 +19,7 @@ class MailFactory extends Factory
             'content' => $this->faker->sentence(),
             'status_id' => 2,
             'ip' => $this->faker->ipv4(),
-            'user_agent' => $this->faker->userAgent()
+            'user_agent' => $this->faker->userAgent(),
         ];
     }
 }

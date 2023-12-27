@@ -21,7 +21,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Entities\Place\Place::all() as $row)
+                @foreach(\App\Models\Place\Place::all() as $row)
                     <tr>
                         <form>
                             <td>{{$row->company_name}}</td>
@@ -84,7 +84,7 @@
                         <div class="form-group">
                             <label for="skills">Roles</label>
                             <select class="selectpicker form-control" name="skills[]" id="skills" multiple>
-                                @foreach(\App\Entities\Skill\Skill::all() as $skill)
+                                @foreach(\App\Models\Skill\Skill::all() as $skill)
                                     <option value="{{$skill->id}}">{{$skill->name}}</option>
                                 @endforeach
                             </select>

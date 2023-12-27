@@ -52,20 +52,19 @@ class GitInfo extends Command
             $repoStorage[] = $repo;
 
             $directory = storage_path('app/git');
-            $directoryExists = $directory . "/" . $repo['name'];
+            $directoryExists = $directory.'/'.$repo['name'];
             $output = null;
             if (file_exists($directoryExists)) {
-                exec('rm -rf ' . $directoryExists, $output);
-                $this->info("Repo " . $repo['name'] . " apagado!");
+                exec('rm -rf '.$directoryExists, $output);
+                $this->info('Repo '.$repo['name'].' apagado!');
             }
 
-            exec('cd ' . $directory . " && git clone " . $repo['clone_url'], $output);
+            exec('cd '.$directory.' && git clone '.$repo['clone_url'], $output);
 
-            exec('cd ' . $directory . '/' . $repo['name'] . '&& git ls-files | xargs wc -l', $output);
+            exec('cd '.$directory.'/'.$repo['name'].'&& git ls-files | xargs wc -l', $output);
 
-
-            $repoData = array_merge($repoData,$this->sanitizeRepoData($output));
-            if($key > 2){
+            $repoData = array_merge($repoData, $this->sanitizeRepoData($output));
+            if ($key > 2) {
                 dd($repoData);
             }
         }
@@ -81,21 +80,19 @@ class GitInfo extends Command
             $lines = $infos[count($infos) - 2];
             $mime = explode('.', $file);
             $mime = end($mime);
-            if (!array_key_exists($mime, $repoData)) {
+            if (! array_key_exists($mime, $repoData)) {
 
                 $repoData[$mime]['lines'] = 0;
                 $repoData[$mime]['files'] = [];
             }
-            echo $line . "\n";
-            echo $file . "\n";
-            echo $lines . "\n";
-            echo $mime  . "\n";
+            echo $line."\n";
+            echo $file."\n";
+            echo $lines."\n";
+            echo $mime."\n";
             $repoData[$mime]['lines'] += $lines;
             //array_push($cleanData[$mime]['files'],$file);
         }
 
         return $repoData;
     }
-
-
 }

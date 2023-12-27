@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Http\Admin\Profile;
 
-use App\Entities\Auth\User;
+use App\Models\Auth\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -33,7 +33,7 @@ class ProfileControllerTest extends TestCase
         $user = User::factory()->create();
         $payload = [
             'value' => 'danielhe4rt',
-            'enabled' => 'on'
+            'enabled' => 'on',
         ];
         // Act
         $response = $this->actingAs($user)
@@ -42,7 +42,7 @@ class ProfileControllerTest extends TestCase
         // Assert
         $response->assertOk();
         $this->assertDatabaseHas('profile', [
-            'value' => 'danielhe4rt'
+            'value' => 'danielhe4rt',
         ]);
     }
 }

@@ -11,7 +11,7 @@ class LandingProfileTransformer
         foreach ($fields as $field) {
             $values = [
                 'value' => $field['value'],
-                'enabled' => $field['enabled']
+                'enabled' => $field['enabled'],
             ];
             $result[$field['slug']] = $values;
         }

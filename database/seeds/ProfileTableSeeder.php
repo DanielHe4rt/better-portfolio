@@ -1,6 +1,6 @@
 <?php
 
-use App\Entities\Helpers\Profile;
+use App\Models\Helpers\Profile;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +13,7 @@ class ProfileTableSeeder extends Seeder
         $this->disableForeignKeys();
 
         Profile::query()->truncate();
-        foreach(config('portfolio.base-information') as $info){
+        foreach (config('portfolio.base-information') as $info) {
             Profile::create($info);
         }
 

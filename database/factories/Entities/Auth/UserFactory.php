@@ -2,7 +2,7 @@
 
 namespace Database\Factories\Entities\Auth;
 
-use App\Entities\Auth\User;
+use App\Models\Auth\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -13,7 +13,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->firstName . 'He4rt',
+            'name' => $this->faker->firstName.'He4rt',
             'email' => $this->faker->unique()->email(),
             'password' => 'secret123',
             'remember_token' => Str::random(10),

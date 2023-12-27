@@ -1,8 +1,6 @@
 <?php
 
-
-namespace App\Entities\Mailer;
-
+namespace App\Models\Mailer;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Mail extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     public $incrementing = false;
 
@@ -25,12 +23,11 @@ class Mail extends Model
         'content',
         'status_id',
         'ip',
-        'user_agent'
+        'user_agent',
     ];
 
     public function status(): BelongsTo
     {
         return $this->belongsTo(Status::class);
     }
-
 }

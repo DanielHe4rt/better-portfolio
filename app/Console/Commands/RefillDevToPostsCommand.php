@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Entities\Articles\Article;
+use App\Models\Articles\Article;
 use App\Services\PracticalDevService;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -56,10 +56,11 @@ class RefillDevToPostsCommand extends Command
                 'comments' => $post['comments_count'],
                 'reading_time_minutes' => $post['reading_time_minutes'],
                 'published_at' => Carbon::parse($post['published_at']),
-                'is_english' => !Str::contains($post['tags'],'braziliandevs'),
-                'url' => $post['url']
+                'is_english' => ! Str::contains($post['tags'], 'braziliandevs'),
+                'url' => $post['url'],
             ]);
         }
+
         return $result;
     }
 
@@ -67,14 +68,14 @@ class RefillDevToPostsCommand extends Command
     {
         Article::truncate();
         $posts->each(function (array $post) {
-             $article = Article::query()
-                 ->where('platform', '=', $post['platform'])
-                 ->where('platform_id', '=', $post['platform_id'])
-                 ->first();
+            $article = Article::query()
+                ->where('platform', '=', $post['platform'])
+                ->where('platform_id', '=', $post['platform_id'])
+                ->first();
 
-             $article
-                 ? $article->update($post)
-                 : Article::query()->create($post);
+            $article
+                ? $article->update($post)
+                : Article::query()->create($post);
         });
     }
 }

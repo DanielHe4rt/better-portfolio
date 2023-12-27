@@ -10,5 +10,5 @@ return [
     'linkedin_url' => 'LinkedIn URL',
     'instagram_url' => 'Instagram URL',
     'email' => 'Contact Email',
-    'phone_number' => 'Phone Number'
+    'phone_number' => 'Phone Number',
 ];

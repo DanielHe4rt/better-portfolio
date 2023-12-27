@@ -1,27 +1,26 @@
 <?php
 
-
 return [
     'base-information' => [
         [
             'name' => 'fullname',
             'value' => 'Daniel Reis',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'picture_url',
             'value' => 'https://github.com/danielhe4rt.png',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'meta_description',
             'value' => 'Brazilian Developer Evangelist with a few years of Software Development, Community Management and Content Creation.',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'base_description',
             'value' => 'Developer Advocate',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'about',
@@ -36,42 +35,42 @@ Founded a community called <a href=\'https://heartdevs.com\'>He4rt Developers</a
 
 Also I like to teach and create content and I\'m looking for a Developer Advocate/Evangelist role!
             ',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'twitter_url',
             'value' => 'https://twitter.com/danielhe4rt',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'github_url',
             'value' => 'https://github.com/danielhe4rt',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'youtube_url',
             'value' => 'https://youtube.com/danielhe4rt',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'linkedin_url',
             'value' => 'https://linkedin.com/in/danielheart',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'instagram_url',
             'value' => 'https://instagram.com/danielhe4rt',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'email',
             'value' => 'hey@danielheart.dev',
-            'description' => ''
+            'description' => '',
         ],
         [
             'name' => 'phone_number',
             'value' => '+55 11 99551-9955',
-            'description' => ''
+            'description' => '',
         ],
     ],
     'working-time' => [
@@ -79,7 +78,7 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
         '6m-1y',
         '1y-2y',
         '2y-3y',
-        '3y+'
+        '3y+',
     ],
     'skills' => [
         [
@@ -184,7 +183,7 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
         ],
     ],
     'tags' => [
-        'language', 'framework', 'platform', 'others'
+        'language', 'framework', 'platform', 'others',
     ],
     'worked-places' => [
         [
@@ -194,8 +193,8 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'joined_at' => '2018-01-05',
             'lefted_at' => '2019-06-15',
             'skills' => [
-                1, 2, 3
-            ]
+                1, 2, 3,
+            ],
         ],
         [
             'company_name' => 'Fabapp',
@@ -204,8 +203,8 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'joined_at' => '2018-12-02',
             'lefted_at' => '2019-11-14',
             'skills' => [
-                2, 4
-            ]
+                2, 4,
+            ],
         ],
         [
             'company_name' => 'I9XP Technology',
@@ -214,8 +213,8 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'joined_at' => '2019-12-01',
             'lefted_at' => '2020-09-14',
             'skills' => [
-                2, 4
-            ]
+                2, 4,
+            ],
         ],
         [
             'company_name' => 'Leroy Merlin BRA',
@@ -224,8 +223,8 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'joined_at' => '2020-11-01',
             'lefted_at' => '2021-06-14',
             'skills' => [
-                2, 4
-            ]
+                2, 4,
+            ],
         ],
         [
             'company_name' => 'Liuv',
@@ -234,8 +233,8 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'joined_at' => '2022-01-01',
             'lefted_at' => '2022-04-01',
             'skills' => [
-                2, 4
-            ]
+                2, 4,
+            ],
         ],
         [
             'company_name' => 'ScyllaDB',
@@ -244,8 +243,8 @@ Also I like to teach and create content and I\'m looking for a Developer Advocat
             'joined_at' => '2023-02-01',
             'lefted_at' => null,
             'skills' => [
-                2, 4
-            ]
+                2, 4,
+            ],
         ],
-    ]
+    ],
 ];

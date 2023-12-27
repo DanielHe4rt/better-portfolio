@@ -1,6 +1,6 @@
 <?php
 
-use App\Entities\Mailer\Status;
+use App\Models\Mailer\Status;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
@@ -22,11 +22,11 @@ class MailStatusTableSeeder extends Seeder
             [
                 'name' => 'answered',
                 'type' => 'success',
-            ]
+            ],
         ];
         $this->disableForeignKeys();
         Status::query()->truncate();
-        foreach($status as $value){
+        foreach ($status as $value) {
             Status::create($value);
         }
         $this->enableForeignKeys();

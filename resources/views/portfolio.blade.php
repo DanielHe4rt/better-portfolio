@@ -14,7 +14,7 @@
             <h3 class="text-center title">{{__('portfolio.sections.skills.title')}}</h3>
             <p class="text-center">{{__('portfolio.sections.skills.description')}}</p>
             <div class="row d-flex justify-content-center">
-                @foreach(\App\Entities\Skill\Skill::all() as $skill)
+                @foreach(\App\Models\Skill\Skill::all() as $skill)
                     <span class="badge badge-pill badge-{{$skill->type->slug}} badge-custom"
                           data-toggle="tooltip" data-placement="bottom" title=""
                           data-original-title="{{$skill->time->name}}"
@@ -54,7 +54,7 @@
         <section id="whereiwork">
             <h3 class="text-center title">{{__('portfolio.sections.places.title')}}</h3>
             <div class="row">
-                @foreach(\App\Entities\Place\Place::orderByDesc('joined_at')->get() as $place)
+                @foreach(\App\Models\Place\Place::orderByDesc('joined_at')->get() as $place)
                     <div class="col-sm-12 timeline-info">
                         <div class="timeline-time">
                             <small>{{__('portfolio.sections.places.data.company')}}:</small>

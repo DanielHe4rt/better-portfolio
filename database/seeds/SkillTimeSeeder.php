@@ -1,6 +1,6 @@
 <?php
 
-use App\Entities\Skill\Time;
+use App\Models\Skill\Time;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 

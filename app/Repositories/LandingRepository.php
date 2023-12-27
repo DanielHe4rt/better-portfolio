@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Entities\Articles\Article;
-use App\Entities\Helpers\Profile;
+use App\Models\Articles\Article;
+use App\Models\Helpers\Profile;
 use App\Transformers\LandingProfileTransformer;
 
 class LandingRepository
@@ -14,7 +14,7 @@ class LandingRepository
             'profile' => app(LandingProfileTransformer::class)->handle(Profile::all()->toArray()),
             'articles' => Article::query()
                 ->orderByDesc('created_at')
-                ->paginate(3)
+                ->paginate(3),
         ];
     }
 }

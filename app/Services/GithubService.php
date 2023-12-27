@@ -8,13 +8,11 @@
 
 namespace App\Services;
 
-
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
 class GithubService
 {
-
     public $api;
 
     public $clientId;
@@ -28,17 +26,18 @@ class GithubService
             'base_uri' => env('GITHUB_BASE_URL'),
             'timeout' => 10.0,
             'headers' => [
-                'Authorization' => 'token ' . env('GITHUB_TOKEN')
-            ]
+                'Authorization' => 'token '.env('GITHUB_TOKEN'),
+            ],
         ]);
     }
 
     public function getUser($username, $type = false)
     {
-        $uri = "/users/" . $username . "?" . ($type ? "type=" . $type : null) ;
+        $uri = '/users/'.$username.'?'.($type ? 'type='.$type : null);
 
         try {
             $response = $this->api->request('GET', $uri);
+
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $e) {
             echo $e->getMessage();
@@ -48,10 +47,11 @@ class GithubService
 
     public function getUserRepositories($username)
     {
-        $uri = "/users/" . $username . "/repos";
+        $uri = '/users/'.$username.'/repos';
 
         try {
             $response = $this->api->request('GET', $uri);
+
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $e) {
             dd(1);

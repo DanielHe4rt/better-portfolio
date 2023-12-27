@@ -1,24 +1,22 @@
 <?php
 
+namespace App\Models\Place;
 
-namespace App\Entities\Place;
-
-
-use App\Entities\Skill\Skill;
+use App\Models\Skill\Skill;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Place extends Model
 {
-    protected $table = "work_places";
+    protected $table = 'work_places';
 
     protected $fillable = [
         'company_name',
         'role',
         'description',
         'joined_at',
-        'lefted_at'
+        'lefted_at',
     ];
 
     protected $casts = [
@@ -27,19 +25,19 @@ class Place extends Model
     ];
 
     protected $appends = [
-        'worked_time'
+        'worked_time',
     ];
 
     public function getWorkedTimeAttribute(): string
     {
         $joined = Carbon::parse($this->attributes['joined_at']);
-        $leftedFlag = !empty($this->attributes['lefted_at']) ? true : false;
+        $leftedFlag = ! empty($this->attributes['lefted_at']) ? true : false;
         $lefted = Carbon::parse($this->attributes['lefted_at']);
         $diff = $lefted->diff($joined);
-        $format = $diff->y ? "%y " . ($diff->y === 1 ? "year" : "years") : '';
-        $format .= $diff->y && $diff->m ? " e " : '';
-        $format .= ($diff->m ? " %m " . ($diff->m === 1 ? "month" : "months") : '');
-        $format .= !$leftedFlag ? ' until now' : '';
+        $format = $diff->y ? '%y '.($diff->y === 1 ? 'year' : 'years') : '';
+        $format .= $diff->y && $diff->m ? ' e ' : '';
+        $format .= ($diff->m ? ' %m '.($diff->m === 1 ? 'month' : 'months') : '');
+        $format .= ! $leftedFlag ? ' until now' : '';
 
         return $diff->format($format);
     }

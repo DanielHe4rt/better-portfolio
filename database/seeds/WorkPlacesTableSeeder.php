@@ -1,12 +1,13 @@
 <?php
 
-use App\Entities\Place\Place;
+use App\Models\Place\Place;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
 class WorkPlacesTableSeeder extends Seeder
 {
     use DisableForeignKeys;
+
     public function run()
     {
         $this->disableForeignKeys();

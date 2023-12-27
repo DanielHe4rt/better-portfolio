@@ -11,7 +11,7 @@ class PracticalDevService
     public function __construct()
     {
         $this->client = new Client([
-            'base_uri' => 'https://dev.to/api'
+            'base_uri' => 'https://dev.to/api',
         ]);
     }
 

@@ -1,8 +1,9 @@
 <?php
+
 return [
     'header' => [
         'home' => 'Portfolio',
-        'locale' => 'Linguagem'
+        'locale' => 'Linguagem',
     ],
     'sidebar' => [
         'twitter' => 'Siga-me no Twitter',
@@ -13,11 +14,11 @@ return [
     ],
     'sections' => [
         'about' => [
-            'title' => 'Sobre mim'
+            'title' => 'Sobre mim',
         ],
         'skills' => [
             'title' => 'Habilidades',
-            'description' => 'Abaixo estão as ferramentas que já trabalhei ao decorrer da minha carreira, informando o tempo de uso das mesmas:'
+            'description' => 'Abaixo estão as ferramentas que já trabalhei ao decorrer da minha carreira, informando o tempo de uso das mesmas:',
         ],
         'places' => [
             'title' => 'Experiencias',
@@ -25,8 +26,8 @@ return [
                 'company' => 'Empresa',
                 'duration' => 'Duraçao',
                 'rated_skills' => 'Principais habilidades usadas',
-                'description' => 'Descrição das atividades'
-            ]
+                'description' => 'Descrição das atividades',
+            ],
         ],
         'contact' => [
             'title' => 'Contato',
@@ -35,8 +36,8 @@ return [
                 'email' => 'E-mail',
                 'subject' => 'Assunto',
                 'message' => 'Mensagem',
-                'send' => 'Enviar <3'
-            ]
-        ]
-    ]
+                'send' => 'Enviar <3',
+            ],
+        ],
+    ],
 ];

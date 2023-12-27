@@ -62,7 +62,3 @@ Route::middleware('auth')->group(function () {
         Route::delete('/{placeId}', 'Places\\PlacesController@deletePlace');
     });
 });
-
-
-
-

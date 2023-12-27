@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateWorkPlacesSkillsTable extends Migration
 {
@@ -17,8 +17,8 @@ class CreateWorkPlacesSkillsTable extends Migration
             $table->bigInteger('work_place_id')->unsigned();
             $table->bigInteger('skill_id')->unsigned();
 
-            $table->foreign('work_place_id')->references('id')->on('work_places')->onDelete('cascade');;
-            $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');;
+            $table->foreign('work_place_id')->references('id')->on('work_places')->onDelete('cascade');
+            $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');
         });
     }
 

@@ -26,7 +26,7 @@
                     </th>
                 </thead>
                 <tbody>
-                @foreach(\App\Entities\Skill\Skill::all() as $skill)
+                @foreach(\App\Models\Skill\Skill::all() as $skill)
                     <tr>
                         <td>{{$skill->name}}</td>
                         <td>{{$skill->type->name}}</td>
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label for="staticSkillType">Tipo de habilidade</label>
                             <select class="form-control" id="staticSkillType" name="type_id">
-                                @foreach(\App\Entities\Skill\Type::all() as $type)
+                                @foreach(\App\Models\Skill\Type::all() as $type)
                                     <option value="{{$type->id}}">{{$type->name}}</option>
                                 @endforeach
                             </select>
@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label for="staticSkillTime">Tempo de Habilidade</label>
                             <select class="form-control" id="staticSkillTime" name="time_id">
-                                @foreach(\App\Entities\Skill\Time::all() as $time)
+                                @foreach(\App\Models\Skill\Time::all() as $time)
                                     <option value="{{$time->id}}">{{$time->name}}</option>
                                 @endforeach
                             </select>
@@ -110,7 +110,7 @@
                             <select class="form-control" id="staticSkillType" name="type_id">
                                 <option id="skillType"></option>
                                 <option disabled></option>
-                                @foreach(\App\Entities\Skill\Type::all() as $type)
+                                @foreach(\App\Models\Skill\Type::all() as $type)
                                     <option value="{{$type->id}}">{{$type->name}}</option>
                                 @endforeach
                             </select>
@@ -120,7 +120,7 @@
                             <select class="form-control" id="staticSkillTime" name="time_id">
                                 <option id="skillTime"></option>
                                 <option disabled></option>
-                                @foreach(\App\Entities\Skill\Time::all() as $time)
+                                @foreach(\App\Models\Skill\Time::all() as $time)
                                     <option value="{{$time->id}}">{{$time->name}}</option>
                                 @endforeach
                             </select>

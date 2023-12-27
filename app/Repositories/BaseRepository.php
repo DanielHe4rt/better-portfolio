@@ -1,18 +1,18 @@
 <?php
 
-
 namespace App\Repositories;
-
 
 class BaseRepository
 {
     public $model;
 
-    public function findById($id, array $includes = []){
+    public function findById($id, array $includes = [])
+    {
         $model = $this->model->findOrFail($id);
-        if(count($includes) > 0){
+        if (count($includes) > 0) {
             $model->load($includes);
         }
+
         return $model;
     }
 
@@ -30,5 +30,4 @@ class BaseRepository
     {
         return $this->model->findOrFail($id)->delete();
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Entities\Skill\Skill;
+use App\Models\Skill\Skill;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 

@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Cliques únicos hoje</h5>
                     <p class="card-text">
-                        {{\App\Entities\Helpers\Access::whereDate('created_at',date('Y-m-d'))->count()}}
+                        {{\App\Models\Helpers\Access::whereDate('created_at',date('Y-m-d'))->count()}}
                     </p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <div class="card-body">
                     <h5 class="card-title">E-mails não lidos</h5>
                     <p class="card-text">
-                        {{\App\Entities\Mailer\Mail::where('status_id','<',3)->count()}}
+                        {{\App\Models\Mailer\Mail::where('status_id','<',3)->count()}}
                     </p>
                 </div>
             </div>

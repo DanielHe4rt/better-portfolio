@@ -3,7 +3,6 @@
 namespace Tests\Feature\Http;
 
 use App\Mail\ContactMail;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
@@ -38,7 +37,7 @@ class LandingControllerTest extends TestCase
             'email' => 'hey@danielheart.dev',
             'name' => 'Daniel Reis',
             'subject' => 'Hey dude',
-            'content' => 'I totally miss you (8'
+            'content' => 'I totally miss you (8',
         ];
 
         // Act
