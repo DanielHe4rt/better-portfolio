@@ -1,39 +1,41 @@
 <?php
 
-namespace App\Filament\Resources\Skill;
+namespace App\Filament\Resources;
 
-use App\Filament\Resources\Skill\SkillResource\Pages;
-use App\Models\Skill\Skill;
+use App\Filament\Resources\ProfileResource\Pages;
+use App\Filament\Resources\ProfileResource\RelationManagers;
+use App\Models\Profile;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SkillResource extends Resource
+class ProfileResource extends Resource
 {
-    protected static ?string $model = Skill::class;
+    protected static ?string $model = Profile::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    protected static ?string $navigationGroup = 'Skills';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('type_id')
-                    ->relationship('type', 'name')
-                    ->required(),
-                Forms\Components\Select::make('time_id')
-                    ->required()
-                    ->relationship('time', 'name'),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('comment')
+                Forms\Components\Textarea::make('value')
+                    ->required()
                     ->maxLength(65535)
                     ->columnSpanFull(),
+                Forms\Components\Textarea::make('description')
+                    ->required()
+                    ->maxLength(65535)
+                    ->columnSpanFull(),
+                Forms\Components\Toggle::make('enabled')
+                    ->required(),
             ]);
     }
 
@@ -43,12 +45,11 @@ class SkillResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('type.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('time.name')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('value')
+                    ->limit(30)
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('enabled')
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +82,9 @@ class SkillResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSkills::route('/'),
-            'create' => Pages\CreateSkill::route('/create'),
-            'edit' => Pages\EditSkill::route('/{record}/edit'),
+            'index' => Pages\ListProfiles::route('/'),
+            'create' => Pages\CreateProfile::route('/create'),
+            'edit' => Pages\EditProfile::route('/{record}/edit'),
         ];
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Place;
+namespace App\Models;
 
 use App\Models\Skill\Skill;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Place extends Model
+class Work extends Model
 {
     protected $table = 'work_places';
 

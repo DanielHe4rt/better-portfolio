@@ -212,6 +212,11 @@ span.badge-language {
     color: white;
 }
 
+span.badge-Database  {
+    background-color: #ff8072;
+    color: white;
+}
+
 span.badge-framework {
     background-color: #c772ff;
     color: white;

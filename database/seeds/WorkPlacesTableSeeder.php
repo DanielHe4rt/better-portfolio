@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Place\Place;
+use App\Models\Work;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 
@@ -11,11 +11,11 @@ class WorkPlacesTableSeeder extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
-        Place::query()->truncate();
+        Work::query()->truncate();
         foreach (config('portfolio.worked-places') as $value) {
             $roles = $value['skills'];
             unset($value['skills']);
-            $data = Place::query()->create($value);
+            $data = Work::query()->create($value);
             $data->skills()->sync($roles);
         }
 

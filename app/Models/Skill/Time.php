@@ -10,7 +10,7 @@ class Time extends Model
 
     protected $fillable = ['name'];
 
-    public function getNameAttribute()
+    public function getNameAttribute(): string
     {
         return __('skills.time.'.$this->attributes['name']);
     }

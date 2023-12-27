@@ -54,7 +54,7 @@
         <section id="whereiwork">
             <h3 class="text-center title">{{__('portfolio.sections.places.title')}}</h3>
             <div class="row">
-                @foreach(\App\Models\Place\Place::orderByDesc('joined_at')->get() as $place)
+                @foreach(\App\Models\Work::orderByDesc('joined_at')->get() as $place)
                     <div class="col-sm-12 timeline-info">
                         <div class="timeline-time">
                             <small>{{__('portfolio.sections.places.data.company')}}:</small>

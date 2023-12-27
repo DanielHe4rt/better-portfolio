@@ -21,7 +21,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Models\Place\Place::all() as $row)
+                @foreach(\App\Models\Work::all() as $row)
                     <tr>
                         <form>
                             <td>{{$row->company_name}}</td>
@@ -30,7 +30,8 @@
                                 <button type="submit" data-place-id="{{$row->id}}" class="btn btn-warning editPlaceBtn">
                                     Editar
                                 </button>
-                                <button type="submit" data-place-id="{{$row->id}}" class="btn btn-danger deletePlaceBtn">Remover
+                                <button type="submit" data-place-id="{{$row->id}}"
+                                        class="btn btn-danger deletePlaceBtn">Remover
                                 </button>
                             </td>
                         </form>
@@ -58,7 +59,8 @@
 
                         <div class="form-group">
                             <label for="company_name">Company Name</label>
-                            <input type="text" class="form-control" id="company_name" name="company_name" aria-describedby="emailHelp"
+                            <input type="text" class="form-control" id="company_name" name="company_name"
+                                   aria-describedby="emailHelp"
                                    placeholder="Google">
                         </div>
                         <div class="form-group">
@@ -74,11 +76,13 @@
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <label for="joined_at">Joined At</label>
-                                <input type="date" class="form-control" id="joined_at" name="joined_at" value="2015-01-01">
+                                <input type="date" class="form-control" id="joined_at" name="joined_at"
+                                       value="2015-01-01">
                             </div>
                             <div class="col-sm-6">
                                 <label for="lefted_at">Lefted At</label>
-                                <input type="date" class="form-control" id="lefted_at" name="lefted_at" value="2016-01-01">
+                                <input type="date" class="form-control" id="lefted_at" name="lefted_at"
+                                       value="2016-01-01">
                             </div>
                         </div>
                         <div class="form-group">
@@ -158,7 +162,7 @@
                         data.skills.find(skill => {
                             if (skill.id === parseInt(skillId)) {
                                 htmlLabel += skill.name + " ";
-                                if(!opts[i].getAttribute('selected')){
+                                if (!opts[i].getAttribute('selected')) {
                                     return opts[i].setAttribute('selected', '');
                                 }
                             }
@@ -194,12 +198,12 @@
                 })
             })
 
-            $(".deletePlaceBtn").click(function(e){
+            $(".deletePlaceBtn").click(function (e) {
                 e.preventDefault();
-                $("#deleteBtn").attr('data-id',$(this).attr('data-place-id'));
+                $("#deleteBtn").attr('data-id', $(this).attr('data-place-id'));
                 $("#deletePlaceModal").modal('toggle')
             })
-            $("#deleteBtn").click(function(e){
+            $("#deleteBtn").click(function (e) {
                 e.preventDefault();
 
                 let id = $(this).attr('data-id');

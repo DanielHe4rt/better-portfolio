@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Helpers\Profile;
+use App\Models\Profile;
 use App\Traits\Database\DisableForeignKeys;
 use Illuminate\Database\Seeder;
 

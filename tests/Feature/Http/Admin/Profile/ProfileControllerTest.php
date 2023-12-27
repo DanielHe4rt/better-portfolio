@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Http\Admin\Profile;
 
-use App\Models\Auth\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

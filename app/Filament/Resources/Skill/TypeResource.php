@@ -2,17 +2,20 @@
 
 namespace App\Filament\Resources\Skill;
 
-use App\Filament\Resources\Skill\SkillResource\Pages;
-use App\Models\Skill\Skill;
+use App\Filament\Resources\Skill\TypeResource\Pages;
+use App\Filament\Resources\Skill\TypeResource\RelationManagers;
+use App\Models\Skill\Type;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SkillResource extends Resource
+class TypeResource extends Resource
 {
-    protected static ?string $model = Skill::class;
+    protected static ?string $model = Type::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -22,18 +25,9 @@ class SkillResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('type_id')
-                    ->relationship('type', 'name')
-                    ->required(),
-                Forms\Components\Select::make('time_id')
-                    ->required()
-                    ->relationship('time', 'name'),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('comment')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
             ]);
     }
 
@@ -43,12 +37,6 @@ class SkillResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('type.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('time.name')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +69,9 @@ class SkillResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSkills::route('/'),
-            'create' => Pages\CreateSkill::route('/create'),
-            'edit' => Pages\EditSkill::route('/{record}/edit'),
+            'index' => Pages\ListTypes::route('/'),
+            'create' => Pages\CreateType::route('/create'),
+            'edit' => Pages\EditType::route('/{record}/edit'),
         ];
     }
 }

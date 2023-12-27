@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Auth;
+namespace App\Models;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;

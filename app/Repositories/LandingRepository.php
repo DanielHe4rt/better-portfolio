@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Articles\Article;
-use App\Models\Helpers\Profile;
+use App\Models\Profile;
 use App\Transformers\LandingProfileTransformer;
 
 class LandingRepository

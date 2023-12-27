@@ -50,7 +50,7 @@ class RefillDevToPostsCommand extends Command
             $result->push([
                 'platform' => $platform,
                 'platform_id' => $post['id'],
-                'cover_image' => $post['cover_image'] ?? '',
+                'cover_image' => $post['cover_image'] ?? 'https://thepracticaldev.s3.amazonaws.com/i/6hqmcjaxbgbon8ydw93z.png',
                 'title' => $post['title'],
                 'reactions' => $post['positive_reactions_count'],
                 'comments' => $post['comments_count'],
